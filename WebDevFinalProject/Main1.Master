@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main1.master.cs" Inherits="WebDevFinalProject.Main1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XYZ INC</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="MainStyleSheet.css" rel="stylesheet"/>
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="wrapper">
+                <aside id="sidebar">
+                    <div class="d-flex">
+                        <button id="toggle-btn" type="button">
+                            <i class="lni lni-grid-alt"></i>
+                        </button>
+                        <div class="sidebar-logo">
+                            <a href="#">Based</a>
+                        </div>
+                    </div>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link"><span>Patient</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link"><span>Physician</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <span>Prescription</span>
+
+
+                            </a>
+                            <ul class="siderbar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" id="collapseOne">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Add Prescription</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Delete Prescription</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span>Refill</span>
+
+
+                            </a>
+                            <ul class="siderbar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" id="collapseTwo">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Add Prescription</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Delete Prescription</a>
+                                </li>
+                            </ul>
+                        </li>
+                   </ul>
+                </aside>
+                <div class="main p-3">
+                    <h1>
+                        XYZ CLINIC
+                    </h1>
+                </div>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script src="MainScript.js"></script>
+    <script src="bootstrap/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

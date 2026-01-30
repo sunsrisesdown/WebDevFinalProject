@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>XYZ INC</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>
@@ -16,7 +16,7 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 
-                <a class="navbar-brand mb-0 h1" href="#"><img class="d-inline-block align-top" src="images/main.jpeg" width="30" height="30" />&nbsp;&nbsp;XYZ INC</a>
+                <a class="navbar-brand mb-0 h1" href="#">&nbsp;<img class="d-inline-block align-top" src="images/main.jpeg" width="30" height="30" />&nbsp;&nbsp;XYZ INC</a>
 
                 <button class="navbar-toggler"
                         type="button"
@@ -27,7 +27,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav">
                         <li class="nav-item active"><a class="nav-link" href="#">Add Patient</a></li>
                         <li class="nav-item active"><a class="nav-link" href="#">Add Physician</a></li>
                         <li class="navbar dropdown">
