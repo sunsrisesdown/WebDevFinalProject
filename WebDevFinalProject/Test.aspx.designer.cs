@@ -11,7 +11,7 @@ namespace WebDevFinalProject
 {
 
 
-    public partial class Test
+    public partial class test
     {
     }
 }

@@ -94,7 +94,7 @@
     <Content Include="MainScript.js" />
     <Content Include="MainStyleSheet.css" />
     <Content Include="terst.aspx" />
-    <Content Include="Test.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Main1.Master.cs">
       <DependentUpon>Main1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main1.Master.designer.cs">
       <DependentUpon>Main1.Master</DependentUpon>
@@ -126,12 +127,12 @@
     <Compile Include="terst.aspx.designer.cs">
       <DependentUpon>terst.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

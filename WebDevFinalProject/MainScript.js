@@ -1,5 +1,6 @@
-﻿const uno = document.querySelector("#toggle-btn");
+﻿const toggleBtn = document.querySelector("#toggle-btn");
+const sidebar = document.querySelector("#sidebar");
 
-uno.addEventListener("click", function () {
-    document.querySelector("").classList.toggle("expand");
+toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("expand");
 });

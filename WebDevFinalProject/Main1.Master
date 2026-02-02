@@ -1,84 +1,114 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main1.master.cs" Inherits="WebDevFinalProject.Main1" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XYZ INC</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <link href="bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="MainStyleSheet.css" rel="stylesheet"/>
-    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+
+    <link href="bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="MainStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" ref="https://cdn.jsdelivr.net/npm/lineicons@5.0.0/dist/lineicons.css">
+
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
+
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <div class="wrapper">
-                <aside id="sidebar">
-                    <div class="d-flex">
-                        <button id="toggle-btn" type="button">
-                            <i class="lni lni-grid-alt"></i>
-                        </button>
-                        <div class="sidebar-logo">
-                            <a href="#">Based</a>
-                        </div>
-                    </div>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link"><span>Patient</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link"><span>Physician</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <span>Prescription</span>
+<form id="form1" runat="server">
 
+<div class="wrapper">
 
-                            </a>
-                            <ul class="siderbar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" id="collapseOne">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Add Prescription</a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Delete Prescription</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <span>Refill</span>
+    <!-- sidebar -->
+    <aside id="sidebar">
+        <br>
+        <div class="d-flex align-items-center">
+            <button id="toggle-btn" type="button">
+                <i class="lni lni-grid-alt"></i>
+            </button>
 
-
-                            </a>
-                            <ul class="siderbar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" id="collapseTwo">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Add Prescription</a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Delete Prescription</a>
-                                </li>
-                            </ul>
-                        </li>
-                   </ul>
-                </aside>
-                <div class="main p-3">
-                    <h1>
-                        XYZ CLINIC
-                    </h1>
-                </div>
+            <div class="sidebar-logo">
+                <h3>XYZ CLINIC</h3>
             </div>
-
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
-    </form>
 
-    <script src="MainScript.js"></script>
-    <script src="bootstrap/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+        <ul class="sidebar-nav">
+
+            <li class="sidebar-item">
+                <a href="Patient.aspx" class="sidebar-link">
+                    <i class="lni lni-user"></i>
+                    <span>Patient</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="Physician.aspx" class="sidebar-link">
+                    <i class="lni lni-sthethoscope"></i>
+                    <span>Physician</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#prescriptionMenu"
+                   aria-expanded="false">
+                    <i class="lni lni-files"></i>
+                    <span>Prescription</span>
+                </a>
+
+                <ul id="prescriptionMenu"
+                    class="sidebar-dropdown list-unstyled collapse">
+                    <li>
+                        <a href="AddPrescription.aspx" class="sidebar-link">
+                            Add Prescription
+                        </a>
+                    </li>
+                    <li>
+                        <a href="DeletePrescription.aspx" class="sidebar-link">
+                            Delete Prescription
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#refillMenu"
+                   aria-expanded="false">
+                    <i class="lni lni-reload"></i>
+                    <span>Refill</span>
+                </a>
+
+                <ul id="refillMenu"
+                    class="sidebar-dropdown list-unstyled collapse">
+                    <li>
+                        <a href="AddRefill.aspx" class="sidebar-link">
+                            Add Refill
+                        </a>
+                    </li>
+                    <li>
+                        <a href="DeleteRefill.aspx" class="sidebar-link">
+                            Delete Refill
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </aside>
+
+    <main class="main p-4">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </main>
+
+</div>
+
+</form>
+
+<script src="bootstrap/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+<script src="MainScript.js"></script>
 </body>
 </html>
