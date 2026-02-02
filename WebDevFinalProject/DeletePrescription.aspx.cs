@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebDevFinalProject
 {
-    public partial class terst : System.Web.UI.Page
+    public partial class DeletePrescription : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

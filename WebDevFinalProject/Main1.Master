@@ -9,7 +9,7 @@
 
     <link href="bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="MainStyleSheet.css" rel="stylesheet" />
-    <link rel="stylesheet" ref="https://cdn.jsdelivr.net/npm/lineicons@5.0.0/dist/lineicons.css">
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
 
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
@@ -25,7 +25,7 @@
         <br>
         <div class="d-flex align-items-center">
             <button id="toggle-btn" type="button">
-                <i class="lni lni-grid-alt"></i>
+                <i class="lni lni-menu"></i>
             </button>
 
             <div class="sidebar-logo">
@@ -36,14 +36,14 @@
         <ul class="sidebar-nav">
 
             <li class="sidebar-item">
-                <a href="Patient.aspx" class="sidebar-link">
+                <a href="AddPatient.aspx" class="sidebar-link">
                     <i class="lni lni-user"></i>
                     <span>Patient</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a href="Physician.aspx" class="sidebar-link">
+                <a href="AddPhysician.aspx" class="sidebar-link">
                     <i class="lni lni-sthethoscope"></i>
                     <span>Physician</span>
                 </a>
@@ -92,6 +92,11 @@
                     <li>
                         <a href="DeleteRefill.aspx" class="sidebar-link">
                             Delete Refill
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ModifyRefill.aspx" class="sidebar-link">
+                            Modify Refill
                         </a>
                     </li>
                 </ul>

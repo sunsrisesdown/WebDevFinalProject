@@ -11,7 +11,7 @@ namespace WebDevFinalProject
 {
 
 
-    public partial class terst
+    public partial class AddPhysician
     {
     }
 }
