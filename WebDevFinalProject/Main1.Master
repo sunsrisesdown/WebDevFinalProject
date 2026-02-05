@@ -107,7 +107,7 @@
                    data-bs-toggle="collapse"
                    data-bs-target="#ViewMenu"
                    aria-expanded="false">
-                    <i class="lni lni-reload"></i>
+                    <i class="lni lni-monitor"></i>
                     <span>View</span>
                 </a>
 
