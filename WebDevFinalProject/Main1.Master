@@ -25,7 +25,7 @@
         <br>
         <div class="d-flex align-items-center">
             <button id="toggle-btn" type="button">
-                <i class="lni lni-menu"></i>
+                <i class="lni lni-menu-hamburger-1"></i>
             </button>
 
             <div class="sidebar-logo">
@@ -37,14 +37,14 @@
 
             <li class="sidebar-item">
                 <a href="AddPatient.aspx" class="sidebar-link">
-                    <i class="lni lni-user"></i>
+                    <i class="lni lni-user-4"></i>
                     <span>Patient</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
                 <a href="AddPhysician.aspx" class="sidebar-link">
-                    <i class="lni lni-sthethoscope"></i>
+                    <i class="lni lni-stethoscope-1"></i>
                     <span>Physician</span>
                 </a>
             </li>
@@ -54,7 +54,7 @@
                    data-bs-toggle="collapse"
                    data-bs-target="#prescriptionMenu"
                    aria-expanded="false">
-                    <i class="lni lni-files"></i>
+                    <i class="lni lni-file-multiple"></i>
                     <span>Prescription</span>
                 </a>
 
@@ -78,7 +78,7 @@
                    data-bs-toggle="collapse"
                    data-bs-target="#refillMenu"
                    aria-expanded="false">
-                    <i class="lni lni-reload"></i>
+                    <i class="lni lni-cloud-refresh-clockwise"></i>
                     <span>Refill</span>
                 </a>
 

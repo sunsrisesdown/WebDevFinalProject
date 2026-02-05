@@ -113,11 +113,11 @@ li {
     display: none;
 }
 
-/*#sidebar:not(.expand)
+#sidebar:not(.expand)
 .sidebar-item:hover
 .has-dropdown + .sidebar-dropdown {
     display: block;
-}*/
+}
 
 #sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
     content: "";
@@ -137,7 +137,7 @@ li {
 
 
 /*collapsing fix*/
-#sidebar:not(.expand) a {
+/*#sidebar:not(.expand) a {
     pointer-events: none;
 }
 
@@ -157,3 +157,4 @@ li {
 #sidebar:not(.expand) .sidebar-item:hover .sidebar-dropdown {
     display: none
 }
+*/
