@@ -102,6 +102,39 @@
                 </ul>
             </li>
 
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#ViewMenu"
+                   aria-expanded="false">
+                    <i class="lni lni-reload"></i>
+                    <span>View</span>
+                </a>
+
+                <ul id="ViewMenu"
+                    class="sidebar-dropdown list-unstyled collapse">
+                    <li>
+                        <a href="ViewPatient.aspx" class="sidebar-link">
+                            View Patient
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ViewPhyisian.aspx" class="sidebar-link">
+                            View Phyisian
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ViewPrescription.aspx" class="sidebar-link">
+                            View Prescription
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ViewRefill.aspx" class="sidebar-link">
+                            View Refill(s)
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </aside>
 
