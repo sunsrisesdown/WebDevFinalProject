@@ -36,14 +36,14 @@
         <ul class="sidebar-nav">
 
             <li class="sidebar-item">
-                <a href="AddPatient.aspx" class="sidebar-link">
+                <a href="pages/AddPatient.aspx" class="sidebar-link">
                     <i class="lni lni-user-4"></i>
                     <span>Patient</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a href="AddPhysician.aspx" class="sidebar-link">
+                <a href="pages/AddPhysician.aspx" class="sidebar-link">
                     <i class="lni lni-stethoscope-1"></i>
                     <span>Physician</span>
                 </a>
@@ -61,12 +61,12 @@
                 <ul id="prescriptionMenu"
                     class="sidebar-dropdown list-unstyled collapse">
                     <li>
-                        <a href="AddPrescription.aspx" class="sidebar-link">
+                        <a href="pages/AddPrescription.aspx" class="sidebar-link">
                             Add Prescription
                         </a>
                     </li>
                     <li>
-                        <a href="DeletePrescription.aspx" class="sidebar-link">
+                        <a href="pages/DeletePrescription.aspx" class="sidebar-link">
                             Delete Prescription
                         </a>
                     </li>
@@ -85,17 +85,17 @@
                 <ul id="refillMenu"
                     class="sidebar-dropdown list-unstyled collapse">
                     <li>
-                        <a href="AddRefill.aspx" class="sidebar-link">
+                        <a href="pages/AddRefill.aspx" class="sidebar-link">
                             Add Refill
                         </a>
                     </li>
                     <li>
-                        <a href="DeleteRefill.aspx" class="sidebar-link">
+                        <a href="pages/DeleteRefill.aspx" class="sidebar-link">
                             Delete Refill
                         </a>
                     </li>
                     <li>
-                        <a href="ModifyRefill.aspx" class="sidebar-link">
+                        <a href="pages/ModifyRefill.aspx" class="sidebar-link">
                             Modify Refill
                         </a>
                     </li>
