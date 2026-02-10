@@ -67,7 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="Default.aspx">
+      <BrowseToURL>~/Default.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Global.asax" />
     <Content Include="pages\AddPatient.aspx" />
     <Content Include="pages\AddPhysician.aspx" />
     <Content Include="pages\AddPrescription.aspx" />
@@ -118,6 +121,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="pages\AddPatient.aspx.cs">
       <DependentUpon>AddPatient.aspx</DependentUpon>
