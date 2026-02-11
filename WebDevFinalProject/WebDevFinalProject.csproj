@@ -71,6 +71,10 @@
       <BrowseToURL>~/Default.aspx</BrowseToURL>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="images\delete.jpg" />
+    <Content Include="images\edit.jpg" />
+    <Content Include="ImportedFiles\main.css" />
+    <Content Include="ImportedFiles\State.xml" />
     <Content Include="pages\AddPatient.aspx" />
     <Content Include="pages\AddPhysician.aspx" />
     <Content Include="pages\AddPrescription.aspx" />
@@ -102,10 +106,15 @@
     <Content Include="images\main.jpeg" />
     <Content Include="MainScript.js" />
     <Content Include="MainStyleSheet.css" />
+    <Content Include="pages\Display.aspx" />
     <Content Include="pages\ModifyRefill.aspx">
       <BrowseToURL>~/Sites/ModifyRefill</BrowseToURL>
     </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="pages\ViewPatient.aspx" />
+    <Content Include="pages\ViewPhysician.aspx" />
+    <Content Include="pages\ViewPrescription.aspx" />
+    <Content Include="pages\ViewRefill.aspx" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
@@ -125,6 +134,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ImportedFiles\state.cs" />
+    <Compile Include="ImportedFiles\StateManager.cs" />
     <Compile Include="pages\AddPatient.aspx.cs">
       <DependentUpon>AddPatient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,12 +186,47 @@
     <Compile Include="Main1.Master.designer.cs">
       <DependentUpon>Main1.Master</DependentUpon>
     </Compile>
+    <Compile Include="pages\Display.aspx.cs">
+      <DependentUpon>Display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Display.aspx.designer.cs">
+      <DependentUpon>Display.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\ModifyRefill.aspx.cs">
       <DependentUpon>ModifyRefill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\ModifyRefill.aspx.designer.cs">
       <DependentUpon>ModifyRefill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ViewPatient.aspx.cs">
+      <DependentUpon>ViewPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ViewPatient.aspx.designer.cs">
+      <DependentUpon>ViewPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ViewPhysician.aspx.cs">
+      <DependentUpon>ViewPhysician.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ViewPhysician.aspx.designer.cs">
+      <DependentUpon>ViewPhysician.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ViewPrescription.aspx.cs">
+      <DependentUpon>ViewPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ViewPrescription.aspx.designer.cs">
+      <DependentUpon>ViewPrescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ViewRefill.aspx.cs">
+      <DependentUpon>ViewRefill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ViewRefill.aspx.designer.cs">
+      <DependentUpon>ViewRefill.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

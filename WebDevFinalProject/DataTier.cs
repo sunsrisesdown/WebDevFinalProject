@@ -14,6 +14,36 @@ namespace WebDevFinalProject
         static SqlConnection myConn = new SqlConnection(connString);
         static System.Data.SqlClient.SqlCommand cmdString = new System.Data.SqlClient.SqlCommand();
 
+        public DataSet getAllPatientsStandard()
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "getAllPatientsStandard";
+
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+
+
+
         public Boolean UpdateRefill(Int32 refillID, string rxNumber, Int32 count, Int32 limit, string date)
         {
 
