@@ -15,7 +15,7 @@
             </td>
             <td>
     <asp:TextBox ID="TxtBoxNumber" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RFV1" runat="server" ControlToValidate="TextBox1" ErrorMessage="You need an RX Number"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RFV1" runat="server" ControlToValidate="TxtBoxNumber" ErrorMessage="You need an RX Number"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -24,7 +24,7 @@
             </td>
             <td>
     <asp:TextBox ID="TxtBoxID" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RFV2" runat="server" ControlToValidate="TextBox2" ErrorMessage="You need a Refill ID"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RFV2" runat="server" ControlToValidate="TxtBoxID" ErrorMessage="You need a Refill ID"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

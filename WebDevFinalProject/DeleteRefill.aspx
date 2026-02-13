@@ -4,13 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="Label1" runat="server" Text="RX Number:"></asp:Label>
     <asp:TextBox ID="TxtBoxNumber" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RFV1" runat="server" ControlToValidate="TextBox1" ErrorMessage="You need an RX Number"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RFV1" runat="server" ControlToValidate="TxtBoxNumber" ErrorMessage="You need an RX Number"></asp:RequiredFieldValidator>
     <table class="w-100">
         <tr>
             <td>
     <asp:Label ID="Label2" runat="server" Text="Refill ID"></asp:Label>
     <asp:TextBox ID="TxtBoxID" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RFV2" runat="server" ControlToValidate="TextBox2" ErrorMessage="You Need a Refill ID"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RFV2" runat="server" ControlToValidate="TxtBoxID" ErrorMessage="You Need a Refill ID"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
