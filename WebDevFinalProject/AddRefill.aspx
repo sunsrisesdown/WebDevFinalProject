@@ -14,14 +14,17 @@
     <asp:Label ID="Label1" runat="server" Text="RX Number"></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+    <asp:TextBox ID="TxtBoxNumber" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RFV1" runat="server" ControlToValidate="TextBox1" ErrorMessage="You need an RX Number"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style2">
     <asp:Label ID="Label2" runat="server" Text="Refill ID"></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TxtBoxID" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RFV2" runat="server" ControlToValidate="TextBox2" ErrorMessage="You need a Refill ID"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -33,9 +36,9 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-    <asp:Button ID="Button1" runat="server" Text="Refill" />
-    <asp:Button ID="Button2" runat="server" Text="Clear" />
-    <asp:Button ID="Button3" runat="server" Text="Exit" />
+    <asp:Button ID="BtnRefill" runat="server" Text="Refill" />
+    <asp:Button ID="BtnClear" runat="server" Text="Clear" />
+    <asp:Button ID="BtnExit" runat="server" Text="Exit" />
             </td>
         </tr>
     </table>
