@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
         function SelectAll(cbId) {
-            var grid = document.getElementById("<%= grdPatient.ClientID %>");
+            var grid = document.getElementById("<%= grdPhysician.ClientID %>");
             if (!grid) return;
 
             for (var i = 1; i < grid.rows.length; i++) {
@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-auto">
-                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/pages/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Patient</asp:HyperLink>
+                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Patient</asp:HyperLink>
             </div>
             <div class="col">
                 <asp:Label ID="Label1" runat="server" Text="Search criteria" CssClass="h5"></asp:Label>
@@ -79,19 +79,21 @@
                     <%-- start to fix --%>
                     <asp:BoundField DataField="fname" HeaderText="First Name" SortExpression="fname" />
                     <asp:BoundField DataField="lname" HeaderText="Last Name" SortExpression="lname" />
-                    <asp:BoundField DataField="acct_bal" HeaderText="Account Balance" SortExpression="acct_bal" />
+                    <asp:BoundField DataField="salary" HeaderText="Salary" SortExpression="salary" />
+                    <asp:BoundField DataField="work_email" HeaderText="Work Email" SortExpression="work_email" />
+                    <asp:BoundField DataField="work_phone" HeaderText="Work Phone" SortExpression="work_phone" />
                     <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
-                    <asp:BoundField DataField="cell_phone" HeaderText="Phone" SortExpression="cell_phone" />
 
-                    <asp:HyperLinkField DataNavigateUrlFields="Patient_ID"
-                        DataNavigateUrlFormatString="~/pages/Display.aspx?ID={0}&type=view"
+
+                    <asp:HyperLinkField DataNavigateUrlFields="Physician_ID"
+                        DataNavigateUrlFormatString="~/Display.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbtnEdit" runat="server" OnCommand="lbtnEdit_Click" CommandName="lbtnEdit" CommandArgument='<%# Eval("Patient_ID") %>' CssClass="btn btn-sm btn-outline-secondary">Edit</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnEdit" runat="server" OnCommand="lbtnEdit_Click" CommandName="lbtnEdit" CommandArgument='<%# Eval("Physician_ID") %>' CssClass="btn btn-sm btn-outline-secondary">Edit</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton ID="lbtnDelete" runat="server" OnCommand="Delete_Click" CommandName="lbtnDelete" CommandArgument='<%# Eval("Patient_ID") %>' CssClass="btn btn-sm btn-outline-danger">Delete</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnDelete" runat="server" OnCommand="Delete_Click" CommandName="lbtnDelete" CommandArgument='<%# Eval("Physician_ID") %>' CssClass="btn btn-sm btn-outline-danger">Delete</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

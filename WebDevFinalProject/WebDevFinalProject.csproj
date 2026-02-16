@@ -119,6 +119,7 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="ViewPhysician.aspx" />
+    <Content Include="ViewPrescription.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +213,13 @@
     </Compile>
     <Compile Include="ViewPhysician.aspx.designer.cs">
       <DependentUpon>ViewPhysician.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPrescription.aspx.cs">
+      <DependentUpon>ViewPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPrescription.aspx.designer.cs">
+      <DependentUpon>ViewPrescription.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

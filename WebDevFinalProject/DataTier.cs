@@ -40,9 +40,75 @@ namespace WebDevFinalProject
             {
                 throw new ArgumentException(ex.Message);
             }
+            finally
+            {
+                myConn.Close();
+            }
         }
 
+        public DataSet getAllPhysicianStandard()
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "getAllPhysicianStandard";
 
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public DataSet getAllPrescriptionStandard()
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "getAllPrescriptionStandard";
+
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
 
         public Boolean UpdateRefill(Int32 refillID, string rxNumber, Int32 count, Int32 limit, string date)
         {
@@ -377,6 +443,96 @@ namespace WebDevFinalProject
             }
         }
 
+        public void DeletePhysician(string physicianID)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "deletePhysician";
+                // Define input parameter
+                cmdString.Parameters.Add("@physician_id", SqlDbType.VarChar, 6).Value = physicianID;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+
+                cmdString.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public void DeletePatient(string patientID)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "deletePatient";
+                // Define input parameter
+                cmdString.Parameters.Add("@patient_id", SqlDbType.VarChar, 6).Value = patientID;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+
+                cmdString.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+        
+        public void DeletePrescription(string rx_number)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "deletePrescription";
+                // Define input parameter
+                cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx_number;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+
+                cmdString.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         public void AddRefill(Int32 refillID, string rxNumber, string filled)
         {
             try
@@ -408,6 +564,7 @@ namespace WebDevFinalProject
                 myConn.Close();
             }
         }
+
         public void UpdateRefill(Int32 refillID, string rxNumber, string filled)
         {
             try

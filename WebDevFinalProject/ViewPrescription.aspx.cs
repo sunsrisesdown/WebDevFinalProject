@@ -8,29 +8,29 @@ using System.Web.UI.WebControls;
 
 namespace WebDevFinalProject
 {
-    public partial class ViewPhysician : System.Web.UI.Page
+    public partial class ViewPrescription : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.ClientScript.RegisterClientScriptInclude("Text", "MyScript.js");
 
-            grdPhysician.RowDataBound += new GridViewRowEventHandler(grdPhysician_RowDataBound);
+            grdPrescription.RowDataBound += new GridViewRowEventHandler(grdPrescription_RowDataBound);
 
             if (!IsPostBack)
             {
                 //get data
-                Cache.Remove("Physician_Data");
+                Cache.Remove("Prescription_Data");
                 //bindData();
                 if (Convert.ToString(Session["GRIDREFRESH"]) != "")
                 {
-                    Cache.Remove("Physician_Data");
+                    Cache.Remove("Prescription_Data");
                     BindData();
                 }
             }
             else
             {
                 //check if refresh
-                if (Cache["Physician_Data"] != null)
+                if (Cache["Prescription_Data"] != null)
                 {
                     //BindData();
                 }
@@ -47,20 +47,20 @@ namespace WebDevFinalProject
         {
             DataTier aDataTier = new DataTier();
             DataSet aDataSet = new DataSet();
-            aDataSet = aDataTier.getAllPhysicianStandard();
-            grdPhysician.DataSource = aDataSet.Tables[0];
-            Cache.Add("Physician_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
-            grdPhysician.DataBind();
+            aDataSet = aDataTier.getAllPrescriptionStandard();
+            grdPrescription.DataSource = aDataSet.Tables[0];
+            Cache.Add("Prescription_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+            grdPrescription.DataBind();
         }
 
-        protected void grdPhysician_Sorting(object sender, GridViewSortEventArgs e)
+        protected void grdPrescription_Sorting(object sender, GridViewSortEventArgs e)
         {
             SortRecords(e.SortExpression);
         }
 
         private void SortRecords(string sortExpress)
         {
-            string oldExpression = grdPhysician.SortExpression;
+            string oldExpression = grdPrescription.SortExpression;
             String newExpression = sortExpress;
             String lastValue, theSortField;
             String sortExpression;
@@ -101,17 +101,17 @@ namespace WebDevFinalProject
             }
 
             theSortField = (string)ViewState["sortField"];
-            source = (DataView)Cache["Physician_Data"];      // use the cache
+            source = (DataView)Cache["Prescription_Data"];      // use the cache
 
             source.Sort = (" " + sortExpression + " " + this.sortDir);
 
             ViewState["oldSortExpression"] = sortExpress;    // save the sort as old sort
             Session["SortedView"] = source;
-            grdPhysician.DataSource = source;
-            grdPhysician.DataBind();
+            grdPrescription.DataSource = source;
+            grdPrescription.DataBind();
         }
 
-        protected void grdPhysician_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void grdPrescription_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             Int32 pageNum = 0;
             pageNum = e.NewPageIndex;
@@ -120,7 +120,7 @@ namespace WebDevFinalProject
 
         private void Paging(Int32 page)
         {
-            grdPhysician.PageIndex = page;
+            grdPrescription.PageIndex = page;
             BindData();
         }
 
@@ -130,12 +130,12 @@ namespace WebDevFinalProject
             set => ViewState["sortDir"] = value;
         }
 
-        protected void grdPhysician_SelectedIndexChanged(object sender, EventArgs e)
+        protected void grdPrescription_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void grdPhysician_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void grdPrescription_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
@@ -151,26 +151,26 @@ namespace WebDevFinalProject
                 {
                     Session["DELETE"] = "TRUE";   // delete causes page rebind clear afterwards
 
-                    Session["vPhysicianID"] = txtPhysicianID.Text.Trim();
+                    Session["vRX_Number"] = txtPrescription_ID.Text.Trim();
                     Session["vFName"] = txtFName.Text.Trim();
                     Session["vLName"] = txtLName.Text.Trim();
                     CheckBox chk = new CheckBox();
                     Label lbl = new Label();
                     string studid = "";
                     DataTier std = new DataTier();
-                    if (grdPhysician.Rows.Count > 0)  // only do it if there is a row
+                    if (grdPrescription.Rows.Count > 0)  // only do it if there is a row
                     {
                         //For Each item As GridView In grdCustomer.items
-                        foreach (GridViewRow row in grdPhysician.Rows)
+                        foreach (GridViewRow row in grdPrescription.Rows)
                         {
                             //get the selected checkbox
-                            chk = (CheckBox)row.FindControl("chkPhysicianID");
+                            chk = (CheckBox)row.FindControl("chkRX_Number");
                             if (chk.Checked)
                             {
-                                lbl = (Label)row.Controls[0].FindControl("hidPhysicianID");
+                                lbl = (Label)row.Controls[0].FindControl("hidRX_Number");
                                 studid = lbl.Text.Trim();
                                 //delete the record one at a time
-                                std.DeletePhysician(studid);
+                                std.DeletePrescription(studid);
                             }
                         }
                         //refresh datagrid
@@ -191,7 +191,7 @@ namespace WebDevFinalProject
 
         protected void lbtnEdit_Click(object sender, CommandEventArgs e)
         {
-            
+
         }
     }
 }
