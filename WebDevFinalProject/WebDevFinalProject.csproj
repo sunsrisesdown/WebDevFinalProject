@@ -120,6 +120,7 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="ViewPhysician.aspx" />
     <Content Include="ViewPrescription.aspx" />
+    <Content Include="ViewRefill.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="ViewPrescription.aspx.designer.cs">
       <DependentUpon>ViewPrescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewRefill.aspx.cs">
+      <DependentUpon>ViewRefill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewRefill.aspx.designer.cs">
+      <DependentUpon>ViewRefill.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

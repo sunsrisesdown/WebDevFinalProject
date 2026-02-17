@@ -14,6 +14,38 @@ namespace WebDevFinalProject
         static SqlConnection myConn = new SqlConnection(connString);
         static System.Data.SqlClient.SqlCommand cmdString = new System.Data.SqlClient.SqlCommand();
 
+        public DataSet getAllRefillsStandard()
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "getAllRefillsStandard";
+
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         public DataSet getAllPatientsStandard()
         {
             try
@@ -280,7 +312,7 @@ namespace WebDevFinalProject
             }
         }
 
-        public DataSet searchPatient(string patid)
+        public DataSet searchPatient(string patid,string fname, string lname)
         {
             try
             {
@@ -295,6 +327,8 @@ namespace WebDevFinalProject
                 cmdString.CommandText = "searchPatients";
 
                 cmdString.Parameters.Add("@patID", SqlDbType.VarChar, 6).Value = patid;
+                cmdString.Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname;
+                cmdString.Parameters.Add("@lname", SqlDbType.VarChar, 25).Value = lname;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
@@ -313,7 +347,42 @@ namespace WebDevFinalProject
             }
         }
 
-        public DataSet searchRefill(Int32 refillID)
+        public DataSet searchPhysician(string phyID, string fname, string lname)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "searchPatients";
+
+                cmdString.Parameters.Add("@phyID", SqlDbType.VarChar, 6).Value = phyID;
+                cmdString.Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname;
+                cmdString.Parameters.Add("@lname", SqlDbType.VarChar, 25).Value = lname;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public DataSet searchRefill(Int32 refillID,string rx_number)
         {
             try
             {
@@ -328,6 +397,7 @@ namespace WebDevFinalProject
                 cmdString.CommandText = "selectrefill";
 
                 cmdString.Parameters.Add("@refillID", SqlDbType.VarChar, 6).Value = refillID;
+                cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx_number;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
@@ -346,7 +416,7 @@ namespace WebDevFinalProject
             }
         }
 
-        public DataSet searchRefillCount(Int32 refillID)
+        public DataSet searchPrescription(string rx_number, string patID, string phyID)
         {
             try
             {
@@ -358,9 +428,11 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "selectrefillcount";
+                cmdString.CommandText = "searchPrescription";
 
-                cmdString.Parameters.Add("@refillID", SqlDbType.VarChar, 6).Value = refillID;
+                cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rx_number;
+                cmdString.Parameters.Add("@patID", SqlDbType.VarChar, 6).Value = patID;
+                cmdString.Parameters.Add("@phyID", SqlDbType.VarChar, 6).Value = phyID;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
@@ -379,40 +451,7 @@ namespace WebDevFinalProject
             }
         }
 
-        public DataSet searchPrescription(string pres_ID)
-        {
-            try
-            {
-                // open connection
-                myConn.Open();
-                //clear any parameters
-                cmdString.Parameters.Clear();
-                // command
-                cmdString.Connection = myConn;
-                cmdString.CommandType = CommandType.StoredProcedure;
-                cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "searchRXc";
-
-                cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = pres_ID;
-                // adapter and dataset
-                SqlDataAdapter aAdapter = new SqlDataAdapter();
-                aAdapter.SelectCommand = cmdString;
-                DataSet aDataSet = new DataSet();
-
-                aAdapter.Fill(aDataSet);
-                return aDataSet;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-            finally
-            {
-                myConn.Close();
-            }
-        }
-
-        public void DeleteRefill(string rxNumber, Int32 refillID)
+        public void DeleteRefill(Int32 refillID)
         {
             try
             {
@@ -426,7 +465,6 @@ namespace WebDevFinalProject
                 cmdString.CommandTimeout = 1500;
                 cmdString.CommandText = "DELETEREFILL";
                 // Define input parameter
-                cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rxNumber;
                 cmdString.Parameters.Add("@REFILL_ID", SqlDbType.Int).Value = refillID;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
