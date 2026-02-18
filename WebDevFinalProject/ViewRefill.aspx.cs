@@ -139,8 +139,6 @@ namespace WebDevFinalProject
 
                     Session["vRefill_ID"] = txtrefill_ID.Text.Trim();
                     Session["vRX_Number"] = txtRX_Number.Text.Trim();
-                    Session["vFName"] = txtFName.Text.Trim();
-                    Session["vLName"] = txtLName.Text.Trim();
                     CheckBox chk = new CheckBox();
                     Label lbl = new Label();
                     Int32 refill_id = 0;
@@ -177,12 +175,67 @@ namespace WebDevFinalProject
 
         protected void lbtnEdit_Click(object sender, CommandEventArgs e)
         {
-
+            string recordToBeEdited;
+            recordToBeEdited = (e.CommandArgument.ToString().Trim());
+            Response.Redirect("ModifyRefill.aspx?ID=" + recordToBeEdited);
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            try
+            {
+                if ((txtrefill_ID.Text.Trim() != "") || (txtrefill_ID.Text.Trim() != ""))
+                {
+                    try
+                    {
+                        Session["vRefill_ID"] = txtrefill_ID.Text;
+                        Session["vRx_numbers"] = txtRX_Number.Text;
+
+                        Cache.Remove("Refill_Data");
+                        BindDataSearch();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message, ex.InnerException);
+                    }
+                }
+                else
+                {
+                    BindData();
+                }
+            } 
+            catch ( Exception ex )
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+        }
+
+        private void BindDataSearch()
+        {
+            DataTier aDataTier = new DataTier();
+
+            Int32 myID = Int32.Parse(Convert.ToString(Session["vRefill_ID"]).Trim());
+            string myRX = Convert.ToString(Session["vRx_numbers"]);
+
+            txtrefill_ID.Text = myID.ToString().Trim();
+            txtRX_Number.Text = myRX;
+
+            if ((myID > 0) || (myRX.Length > 0))
+            {
+                DataSet aDataSet = new DataSet();
+                aDataSet = aDataTier.searchRefill(myID, myRX);
+                grdRefills.DataSource = aDataSet.Tables[0];
+
+                if (Cache["Refill_Data"] == null)
+                {
+                    Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                    grdRefills.DataBind();
+                }
+            }
+            else
+            {
+                BindData();
+            }
         }
 
         private void BindData()

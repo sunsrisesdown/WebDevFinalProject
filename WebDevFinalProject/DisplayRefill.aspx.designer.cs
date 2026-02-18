@@ -11,70 +11,70 @@ namespace WebDevFinalProject
 {
 
 
-    public partial class ViewRefill
+    public partial class DisplayRefill
     {
 
         /// <summary>
-        /// hplNew control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplNew;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Label1 control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblID;
 
         /// <summary>
-        /// pnlSearch control.
+        /// txtID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
-        /// txtrefill_ID control.
+        /// lblRX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrefill_ID;
+        protected global::System.Web.UI.WebControls.Label lblRX;
 
         /// <summary>
-        /// txtRX_Number control.
+        /// txtRX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRX_Number;
+        protected global::System.Web.UI.WebControls.TextBox txtRX;
 
         /// <summary>
-        /// btnSearch control.
+        /// lblDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.Label lblDate;
 
         /// <summary>
-        /// grdRefills control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRefills;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
     }
 }

@@ -394,9 +394,9 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "selectrefill";
+                cmdString.CommandText = "searchRefill";
 
-                cmdString.Parameters.Add("@refillID", SqlDbType.VarChar, 6).Value = refillID;
+                cmdString.Parameters.Add("@refill_ID", SqlDbType.Int).Value = refillID;
                 cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx_number;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
@@ -430,9 +430,9 @@ namespace WebDevFinalProject
                 cmdString.CommandTimeout = 1500;
                 cmdString.CommandText = "searchPrescription";
 
-                cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rx_number;
-                cmdString.Parameters.Add("@patID", SqlDbType.VarChar, 6).Value = patID;
+                cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx_number;
                 cmdString.Parameters.Add("@phyID", SqlDbType.VarChar, 6).Value = phyID;
+                cmdString.Parameters.Add("@patID", SqlDbType.VarChar, 6).Value = patID;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;

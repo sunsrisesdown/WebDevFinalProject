@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WebDevFinalProject
 {
@@ -40,8 +41,65 @@ namespace WebDevFinalProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            try
+            {
+                if ((txtPrescription_ID.Text.Trim() != "") || (txtPATID.Text.Trim() != "") || (txtPHYID.Text.Trim() != ""))
+                {
+                    try
+                    {
+                        Session["vRX_Number"] = txtPrescription_ID.Text.Trim();
+                        Session["vPHYID"] = txtPHYID.Text.Trim();
+                        Session["vPATID"] = txtPATID.Text.Trim();
+
+                        Cache.Remove("Prescription_Data");
+                        BindDataSearch();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message, ex.InnerException);
+                    }
+                }
+                else
+                {
+                    BindData();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
         }
+
+        private void BindDataSearch()
+        {
+            DataTier aDataTier = new DataTier();
+
+            string myRX = Convert.ToString(Session["vRX_Number"]);
+            string myPHYID = Convert.ToString(Session["vPHYID"]);
+            string myPATID = Convert.ToString(Session["vPATID"]);
+
+            txtPrescription_ID.Text = myRX.ToString().Trim();
+            txtPHYID.Text = myPHYID.ToString().Trim();
+            txtPATID.Text = myPATID.ToString().Trim();
+
+            if ((myRX.Length > 0) || (myPHYID.Length > 0) || (myPATID.Length > 0))
+            {
+                DataSet aDataSet = new DataSet();
+                aDataSet = aDataTier.searchPrescription(myRX, myPATID, myPHYID);
+                grdPrescription.DataSource = aDataSet.Tables[0];
+
+                if (Cache["Prescription_Data"] == null)
+                {
+                    Cache.Add("Prescription_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                    grdPrescription.DataBind();
+                }
+            }
+            else
+            {
+                BindData();
+            }
+        }
+
 
         private void BindData()
         {
@@ -152,8 +210,8 @@ namespace WebDevFinalProject
                     Session["DELETE"] = "TRUE";   // delete causes page rebind clear afterwards
 
                     Session["vRX_Number"] = txtPrescription_ID.Text.Trim();
-                    Session["vFName"] = txtFName.Text.Trim();
-                    Session["vLName"] = txtLName.Text.Trim();
+                    Session["vPHYID"] = txtPHYID.Text.Trim();
+                    Session["vPATID"] = txtPATID.Text.Trim();
                     CheckBox chk = new CheckBox();
                     Label lbl = new Label();
                     string studid = "";

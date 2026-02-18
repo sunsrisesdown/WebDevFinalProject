@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-auto">
-                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Patient</asp:HyperLink>
+                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPrescription.aspx" CssClass="btn btn-outline-primary">New Prescription</asp:HyperLink>
             </div>
             <div class="col">
                 <asp:Label ID="Label1" runat="server" Text="Search criteria" CssClass="h5"></asp:Label>
@@ -41,12 +41,12 @@
                             <asp:TextBox ID="txtPrescription_ID" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">First Name</label>
-                            <asp:TextBox ID="txtFName" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label class="form-label">Physician ID</label>
+                            <asp:TextBox ID="txtPHYID" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Last Name</label>
-                            <asp:TextBox ID="txtLName" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label class="form-label">Patient ID</label>
+                            <asp:TextBox ID="txtPATID" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="col-md-3 d-flex align-items-end">
                             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />

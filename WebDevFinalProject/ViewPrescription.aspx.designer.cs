@@ -51,22 +51,22 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtPrescription_ID;
 
         /// <summary>
-        /// txtFName control.
+        /// txtPHYID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFName;
+        protected global::System.Web.UI.WebControls.TextBox txtPHYID;
 
         /// <summary>
-        /// txtLName control.
+        /// txtPATID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLName;
+        protected global::System.Web.UI.WebControls.TextBox txtPATID;
 
         /// <summary>
         /// btnSearch control.

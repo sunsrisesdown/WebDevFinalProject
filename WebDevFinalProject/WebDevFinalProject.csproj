@@ -70,6 +70,7 @@
     <Content Include="Default.aspx">
       <BrowseToURL>~/Default.aspx</BrowseToURL>
     </Content>
+    <Content Include="DisplayRefill.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\delete.jpg" />
     <Content Include="images\edit.jpg" />
@@ -106,7 +107,6 @@
     <Content Include="images\main.jpeg" />
     <Content Include="MainScript.js" />
     <Content Include="MainStyleSheet.css" />
-    <Content Include="Display.aspx" />
     <Content Include="ModifyRefill.aspx">
       <BrowseToURL>~/Sites/ModifyRefill</BrowseToURL>
     </Content>
@@ -130,6 +130,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayRefill.aspx.cs">
+      <DependentUpon>DisplayRefill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayRefill.aspx.designer.cs">
+      <DependentUpon>DisplayRefill.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,13 +192,6 @@
     </Compile>
     <Compile Include="Main1.Master.designer.cs">
       <DependentUpon>Main1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Display.aspx.cs">
-      <DependentUpon>Display.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Display.aspx.designer.cs">
-      <DependentUpon>Display.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModifyRefill.aspx.cs">
       <DependentUpon>ModifyRefill.aspx</DependentUpon>

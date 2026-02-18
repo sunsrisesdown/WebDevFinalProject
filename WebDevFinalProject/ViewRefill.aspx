@@ -44,14 +44,6 @@
                             <label class="form-label">RX Number</label>
                             <asp:TextBox ID="txtRX_Number" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
                         </div>
-                        <div class="col-md-3">
-                            <label class="form-label">First Name</label>
-                            <asp:TextBox ID="txtFName" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Last Name</label>
-                            <asp:TextBox ID="txtLName" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
                         <div class="col-md-3 d-flex align-items-end">
                             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
                         </div>
@@ -85,7 +77,7 @@
 
 
                     <asp:HyperLinkField DataNavigateUrlFields="refill_id"
-                        DataNavigateUrlFormatString="~/Display.aspx?ID={0}&type=view"
+                        DataNavigateUrlFormatString="~/displayRefill.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">
