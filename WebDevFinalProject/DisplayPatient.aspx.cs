@@ -73,6 +73,7 @@ namespace WebDevFinalProject
                 txtPE.Enabled = false;
                 txtHP.Enabled = false;
                 txtCellP.Enabled = false;
+                txtWE.Enabled = false;
                 txtWP.Enabled = false;
                 txtADD.Enabled = false;
                 txtCIT.Enabled = false;
