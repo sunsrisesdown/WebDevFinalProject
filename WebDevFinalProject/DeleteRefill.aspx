@@ -24,5 +24,5 @@
         </tr>
     </table>
     <asp:Button ID="BtnExit" runat="server" Text="Exit" Width="58px" />
-    <asp:Button ID="BtnDeleteRefill" runat="server" Text="Delete Refill" />
+    <asp:Button ID="BtnDeleteRefill" runat="server" Text="Delete Refill" OnClick="BtnDeleteRefill_Click" />
     </asp:Content>

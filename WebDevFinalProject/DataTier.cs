@@ -142,42 +142,42 @@ namespace WebDevFinalProject
             }
         }
 
-        public Boolean UpdateRefill(Int32 refillID, string rxNumber, Int32 count, Int32 limit, string date)
-        {
+        //public Boolean UpdateRefill(Int32 refillID, string rxNumber, Int32 count, Int32 limit, string date)
+        //{
 
-            try
-            {
-                //open connection
-                myConn.Open();
-                cmdString.Parameters.Clear();
+        //    try
+        //    {
+        //        //open connection
+        //        myConn.Open();
+        //        cmdString.Parameters.Clear();
 
-                // command
-                cmdString.Connection = myConn;
-                cmdString.CommandType = CommandType.StoredProcedure;
-                cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "updateRefill";
+        //        // command
+        //        cmdString.Connection = myConn;
+        //        cmdString.CommandType = CommandType.StoredProcedure;
+        //        cmdString.CommandTimeout = 1500;
+        //        cmdString.CommandText = "updateRefill";
 
-                // Define input parameter
-                cmdString.Parameters.Add("@REFILL_ID", SqlDbType.Int).Value = refillID;
-                cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rxNumber;
-                cmdString.Parameters.Add("@REFILL_REMAINING_COUNT", SqlDbType.Int).Value = count;
-                cmdString.Parameters.Add("@REFILL_COUNT", SqlDbType.Int).Value = limit;
-                cmdString.Parameters.Add("@DATEFILL", SqlDbType.Date).Value = date;
+        //        // Define input parameter
+        //        cmdString.Parameters.Add("@REFILL_ID", SqlDbType.Int).Value = refillID;
+        //        cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rxNumber;
+        //        cmdString.Parameters.Add("@REFILL_REMAINING_COUNT", SqlDbType.Int).Value = count;
+        //        cmdString.Parameters.Add("@REFILL_COUNT", SqlDbType.Int).Value = limit;
+        //        cmdString.Parameters.Add("@DATEFILL", SqlDbType.Date).Value = date;
 
-                //execute statement
-                cmdString.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-            finally
-            {
-                myConn.Close();
+        //        //execute statement
+        //        cmdString.ExecuteNonQuery();
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ArgumentException(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        myConn.Close();
 
-            }
-        }
+        //    }
+        //}
 
         public void AddPatient(string patid, string fname, string midinit, string lname, string dob, string gender, decimal acctbal, string addressOne, string city, string state, string zip, string homePhone, string workPhone, string cellPhone, string workEmail, string personalEmail)
         {

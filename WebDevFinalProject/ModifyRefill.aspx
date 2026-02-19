@@ -22,8 +22,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="BtnSearch" runat="server" Text="Search" />
-                <asp:Button ID="BtnClear" runat="server" Text="Clear" />
+                <asp:Button ID="BtnUpdate" runat="server" Text="Update" OnClick="BtnUpdate_Click" />
                 <asp:Button ID="BtnExit" runat="server" Text="Exit" />
             </td>
             <td>&nbsp;</td>

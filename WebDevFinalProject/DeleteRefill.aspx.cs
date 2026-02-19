@@ -13,5 +13,23 @@ namespace WebDevFinalProject
         {
 
         }
+
+        protected void BtnDeleteRefill_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rxNum = TxtBoxNumber.Text.Trim();
+                Int32 refillID = Int32.Parse(TxtBoxID.Text);
+
+                DataTier db = new DataTier();
+                db.DeleteRefill(rxNum, refillID);
+                
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
+    }
     }
 }

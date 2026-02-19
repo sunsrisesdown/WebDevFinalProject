@@ -18,5 +18,19 @@ namespace WebDevFinalProject
         {
 
         }
-    }
-}
+
+        protected void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rxNumber = TxtBoxNumber.Text, date = /*dtpDate.Value.ToString("yyyy-MM-dd")*/;
+                Int32  refillID = Int32.Parse(TxtBoxID.Text.Trim());
+
+                DataTier dt = new DataTier();
+                dt.UpdateRefill(refillID, rxNumber, null);
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
