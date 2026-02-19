@@ -109,12 +109,14 @@ namespace WebDevFinalProject
             txtFirst.Text = string.Empty;
             txtMiddle.Text = string.Empty;
             txtLast.Text = string.Empty;
-
+            TxtHomePhone.Text = string.Empty;
             txtStreet.Text = string.Empty;
             txtCity.Text = string.Empty;
             txtState.Text = string.Empty;
             txtZip.Text = string.Empty;
-
+            txtSpec1.Text = string.Empty;
+            txtSpec2.Text = string.Empty;
+            txtSpec3.Text = string.Empty;
             txtDateHired.Text = string.Empty;
             txtSalary.Text = string.Empty;
             txtPersonal.Text = string.Empty;

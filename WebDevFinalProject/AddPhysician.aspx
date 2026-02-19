@@ -1,5 +1,41 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="AddPhysician.aspx.cs" Inherits="WebDevFinalProject.AddPhysician" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+    body {
+        font-family: Arial;
+        background-color: #e6e6e6;
+    }
+
+    .mainBox {
+        width: 700px;
+        background-color: white;
+        padding: 15px;
+        border: 1px solid black;
+    }
+
+    h2 {
+        text-align: center;
+        background-color: #cccccc;
+        padding: 5px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    .buttons {
+   
+    }
+
+    .error {
+        color: black;
+        font-size: 12px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="mainBox">
