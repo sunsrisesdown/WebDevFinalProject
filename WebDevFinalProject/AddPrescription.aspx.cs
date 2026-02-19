@@ -13,5 +13,22 @@ namespace WebDevFinalProject
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            string id = txtRxNumber.Text;
+            decimal amount = Decimal.Parse(txtPrescriptionAmt.Text);
+            string patient = txtPatientId.Text;
+            string medication = txtMedication.Text;
+            string dosage = txtDosage.Text;
+            string frequency = txtFrequency.Text;
+            string info = txtPrescritpionInfo.Text;
+            string refillCount = txtRefillCount.Text;
+            DateTime startDate = calPrescriptionStartDate.SelectedDate;
+            DateTime endDate = calPrescriptionEndDate.SelectedDate;
+            string physician = txtPhysicianId.Text;
+
+            Response.Write("<script>alert('Prescription updated successfully');</script>");
+        }
     }
 }
