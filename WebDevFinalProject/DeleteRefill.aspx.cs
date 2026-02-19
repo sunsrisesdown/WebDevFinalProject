@@ -22,7 +22,7 @@ namespace WebDevFinalProject
                 Int32 refillID = Int32.Parse(TxtBoxID.Text);
 
                 DataTier db = new DataTier();
-                db.DeleteRefill(rxNum, refillID);
+                db.DeleteRefill(refillID);
                 
             }
             catch (Exception ex)
@@ -30,6 +30,5 @@ namespace WebDevFinalProject
                
             }
         }
-    }
     }
 }

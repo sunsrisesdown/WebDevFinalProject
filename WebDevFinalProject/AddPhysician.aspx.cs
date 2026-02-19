@@ -48,6 +48,7 @@ namespace WebDevFinalProject
                 }
 
                 if (salary < 0)
+
                 {
                     Response.Write("<script>alert('Salary cannot be negative.');</script>");
                     return;
