@@ -13,5 +13,43 @@ namespace WebDevFinalProject
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string patientID = txtPatient.Text.Trim();
+                string fname = txtFirst.Text.Trim();
+                string midInit = txtMiddle.Text.Trim();
+                string lname = txtLast.Text.Trim();
+                string dob = txtDOB.Text;
+                string gender = cboGender.SelectedValue;
+                decimal acctBal = 0;
+
+                decimal.TryParse(txtAcct.Text, out acctBal);
+
+                string addressOne = txtStreet.Text.Trim();
+                string city = txtCity.Text.Trim();
+                string state = txtState.Text.Trim();
+                string zip = txtZip.Text.Trim();
+                string homePhone = txtHome.Text.Trim();
+                string workPhone = txtWorkP.Text.Trim();
+                string cellPhone = txtCell.Text.Trim();
+                string workEmail = txtWorkE.Text.Trim();
+                string personalEmail = txtPersE.Text.Trim();
+
+                DataTier pdt = new DataTier();
+                pdt.AddPatient(patientID, fname, midInit, lname, dob, gender,
+                               acctBal, addressOne, city, state, zip,
+                               homePhone, workPhone, cellPhone,
+                               workEmail, personalEmail);
+
+                Response.Write("<script>alert('New Patient Added Successfully');</script>");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+            }
+        }
     }
 }

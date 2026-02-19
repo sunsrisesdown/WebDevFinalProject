@@ -36,8 +36,7 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-    <asp:Button ID="BtnRefill" runat="server" Text="Refill" />
-    <asp:Button ID="BtnClear" runat="server" Text="Clear" />
+    <asp:Button ID="BtnRefill" runat="server" Text="Refill" OnClick="BtnRefill_Click" />
     <asp:Button ID="BtnExit" runat="server" Text="Exit" />
             </td>
         </tr>

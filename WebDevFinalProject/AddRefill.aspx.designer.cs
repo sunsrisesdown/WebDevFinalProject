@@ -87,15 +87,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.Button BtnRefill;
 
         /// <summary>
-        /// BtnClear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnClear;
-
-        /// <summary>
         /// BtnExit control.
         /// </summary>
         /// <remarks>
