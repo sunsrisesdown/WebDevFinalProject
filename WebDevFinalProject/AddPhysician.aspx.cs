@@ -37,7 +37,7 @@ namespace WebDevFinalProject
                 string homePhone = TxtHomePhone.Text;
                 string cellPhone = TxtCellPhone.Text;
                 string workPhone = TxtWorkPhone.Text;
-                string personal = "";
+                string personal = string.Empty;
                 string dob = null;
 
                 // Validate salary
@@ -101,6 +101,28 @@ namespace WebDevFinalProject
             {
 
             }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPhysicianID.Text = string.Empty;
+            txtFirst.Text = string.Empty;
+            txtMiddle.Text = string.Empty;
+            txtLast.Text = string.Empty;
+
+            txtStreet.Text = string.Empty;
+            txtCity.Text = string.Empty;
+            txtState.Text = string.Empty;
+            txtZip.Text = string.Empty;
+
+            txtDateHired.Text = string.Empty;
+            txtSalary.Text = string.Empty;
+            txtPersonal.Text = string.Empty;
+            TxtWorkPhone.Text = string.Empty;
+            TxtWorkemail.Text = string.Empty;
+            TxtCellPhone.Text = string.Empty;
+            cboGender.SelectedIndex = 2;
+
         }
     }
 }

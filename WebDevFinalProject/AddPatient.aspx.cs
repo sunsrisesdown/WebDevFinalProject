@@ -51,5 +51,25 @@ namespace WebDevFinalProject
                 Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
             }
         }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPatient.Text = string.Empty;
+            txtFirst.Text = string.Empty;
+            txtMiddle.Text = string.Empty;
+            txtLast.Text = string.Empty;
+            txtDOB.Text = string.Empty;
+            cboGender.SelectedIndex = 0;
+            txtAcct.Text = string.Empty;
+            txtStreet.Text = string.Empty;
+            txtCity.Text = string.Empty;
+            txtState.Text = string.Empty;
+            txtZip.Text = string.Empty;
+            txtHome.Text = string.Empty;
+            txtCell.Text = string.Empty;
+            txtWorkP.Text = string.Empty;
+            txtWorkE.Text = string.Empty;
+            txtPersE.Text = string.Empty;
+        }
     }
 }
