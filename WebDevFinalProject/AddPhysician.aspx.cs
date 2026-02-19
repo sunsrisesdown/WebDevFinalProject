@@ -28,14 +28,17 @@ namespace WebDevFinalProject
                 string city = txtCity.Text.Trim();
                 string state = txtState.Text.Trim();
                 string zip = txtZip.Text.Trim();
-
                 string specialty1 = txtSpec1.Text.Trim();
                 string specialty2 = txtSpec2.Text.Trim();
                 string specialty3 = txtSpec3.Text.Trim();
-
                 string dateHired = txtDateHired.Text.Trim();
-
                 decimal salary;
+                string workEmail = TxtWorkemail.Text;
+                string homePhone = TxtHomePhone.Text;
+                string cellPhone = TxtCellPhone.Text;
+                string workPhone = TxtWorkPhone.Text;
+                string personal = "";
+                string dob = null;
 
                 // Validate salary
                 if (!decimal.TryParse(txtSalary.Text.Trim(), out salary))
@@ -72,7 +75,7 @@ namespace WebDevFinalProject
                     firstName,
                     middleInitial,
                     lastName,
-                    null,
+                    dob,
                     gender,
                     (hiredDate.ToString("yyyy-MM-dd")),
                     salary,
@@ -82,12 +85,21 @@ namespace WebDevFinalProject
                     street,
                     city,
                     state,
-                    zip
-
+                    zip,
+                    homePhone,
+                    workPhone,
+                    cellPhone,
+                    workEmail,
+                    personal
                 );
 
                 // Success message
                 Response.Write("<script>alert('Physician Added Successfully');</script>");
             }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
