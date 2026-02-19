@@ -169,7 +169,16 @@
                         CssClass="error" />
                </td>
            </tr>
-
+        <tr>
+      <td>Personal email:</td>
+      <td>
+           <asp:TextBox ID="txtPersonal" runat="server" />
+           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
+              ControlToValidate="txtPersonal"
+               ErrorMessage="* Required"
+               CssClass="error" />
+      </td>
+  </tr>
         <tr>
     <td>Home Phone:</td>
     <td>
