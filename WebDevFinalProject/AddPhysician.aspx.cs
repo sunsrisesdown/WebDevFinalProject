@@ -38,7 +38,7 @@ namespace WebDevFinalProject
                 string cellPhone = TxtCellPhone.Text;
                 string workPhone = TxtWorkPhone.Text;
                 string personal = string.Empty;
-                string dob = null;
+                string dob = txtDateHired.Text.Trim();
 
                 // Validate salary
                 if (!decimal.TryParse(txtSalary.Text.Trim(), out salary))
@@ -68,6 +68,19 @@ namespace WebDevFinalProject
                     return;
                 }
 
+                DateTime dob1;
+                if (!DateTime.TryParse(dob, out dob1))
+                {
+                    Response.Write("<script>alert('Invalid Date Hired.');</script>");
+                    return;
+                }
+
+                if (dob1 > DateTime.Today)
+                {
+                    Response.Write("<script>alert('Date Hired cannot be in the future.');</script>");
+                    return;
+                }
+
                 // Call your DataTier class
                 DataTier pdt = new DataTier();
 
@@ -76,9 +89,9 @@ namespace WebDevFinalProject
                     firstName,
                     middleInitial,
                     lastName,
-                    dob,
+                    dob1.ToString("yyyy-MM-dd"),
                     gender,
-                    (hiredDate.ToString("yyyy-MM-dd")),
+                    hiredDate.ToString("yyyy-MM-dd"),
                     salary,
                     specialty1,
                     specialty2,
@@ -124,7 +137,7 @@ namespace WebDevFinalProject
             TxtWorkemail.Text = string.Empty;
             TxtCellPhone.Text = string.Empty;
             cboGender.SelectedIndex = 2;
-
+            txtDOB.Text = string.Empty;
         }
     }
 }

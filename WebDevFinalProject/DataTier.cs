@@ -282,9 +282,9 @@ namespace WebDevFinalProject
                 cmdString.Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname;
                 cmdString.Parameters.Add("@lname", SqlDbType.VarChar, 25).Value = lname;
                 cmdString.Parameters.Add("@midinit", SqlDbType.Char, 1).Value = midinit;
-                cmdString.Parameters.Add("@dob", SqlDbType.VarChar).Value = dob;
-                cmdString.Parameters.Add("@gender", SqlDbType.VarChar, 6).Value = gender;
-                cmdString.Parameters.Add("@hire_dt", SqlDbType.VarChar).Value = hire_dt;
+                cmdString.Parameters.Add("@dob", SqlDbType.Date).Value = dob;
+                cmdString.Parameters.Add("@gender", SqlDbType.Char, 6).Value = gender;
+                cmdString.Parameters.Add("@hire_dt", SqlDbType.DateTime).Value = hire_dt;
                 cmdString.Parameters.Add("@salary", SqlDbType.Decimal).Value = salary;
                 cmdString.Parameters.Add("@Specialty_1", SqlDbType.VarChar, 25).Value = special1;
                 cmdString.Parameters.Add("@Specialty_2", SqlDbType.VarChar, 25).Value = special2;
@@ -297,7 +297,7 @@ namespace WebDevFinalProject
                 cmdString.Parameters.Add("@address_one", SqlDbType.VarChar, 60).Value = addressOne;
                 cmdString.Parameters.Add("@city", SqlDbType.VarChar, 60).Value = city;
                 cmdString.Parameters.Add("@PHY_state", SqlDbType.Char, 2).Value = state;
-                cmdString.Parameters.Add("@ZIP", SqlDbType.VarChar, 10).Value = zip;
+                cmdString.Parameters.Add("@ZIP", SqlDbType.VarChar, 5).Value = zip;
 
                 //execute statement
                 cmdString.ExecuteNonQuery();

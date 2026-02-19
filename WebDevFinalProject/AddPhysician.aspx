@@ -85,7 +85,16 @@
                     CssClass="error" />
             </td>
         </tr>
-
+        <tr>
+        <td>Date of Birth:</td>
+        <td>
+            <asp:TextBox ID="txtDOB" runat="server" TextMode="Date" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"
+                ControlToValidate="txtDOB"
+                ErrorMessage="* Required"
+                CssClass="error" />
+        </td>
+        </tr>
         <tr>
             <td>Gender:</td>
             <td>
