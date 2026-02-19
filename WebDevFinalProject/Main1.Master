@@ -67,8 +67,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/DeletePrescription.aspx") %>" class="sidebar-link">
-                            Delete Prescription
+                        <a href="<%: ResolveUrl("~/ModifyPrescription.aspx") %>" class="sidebar-link">
+                            Modify Prescription
                         </a>
                     </li>
                 </ul>

@@ -83,7 +83,7 @@
 
 
                     <asp:HyperLinkField DataNavigateUrlFields="RX_Number"
-                        DataNavigateUrlFormatString="~/Display.aspx?ID={0}&type=view"
+                        DataNavigateUrlFormatString="~/DisplayPrescription.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">

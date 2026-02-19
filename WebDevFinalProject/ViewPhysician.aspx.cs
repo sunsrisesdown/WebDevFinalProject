@@ -40,7 +40,65 @@ namespace WebDevFinalProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            btnSearch.Enabled = false;
+            try
+            {
+                if ((txtPhysicianID.Text.Trim() != "") || (txtFName.Text.Trim() != "") || (txtLName.Text.Trim() != ""))
+                {
+                    try
+                    {
+                        Session["vPhysicianID"] = txtPhysicianID.Text.Trim();
+                        Session["vFName"] = txtFName.Text.Trim();
+                        Session["vLName"] = txtLName.Text.Trim();
+
+                        Cache.Remove("Physician_Data");
+                        BindDataSearch();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message, ex.InnerException);
+                    }
+                }
+                else
+                {
+                    BindData();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+            btnSearch.Enabled = true;
+        }
+
+        private void BindDataSearch()
+        {
+            DataTier aDataTier = new DataTier();
+
+            string myID = Convert.ToString(Session["vPhysicianID"]);
+            string myFN = Convert.ToString(Session["vFName"]);
+            string myLN = Convert.ToString(Session["vLName"]);
+
+            txtPhysicianID.Text = myID.ToString().Trim();
+            txtFName.Text = myFN.ToString().Trim();
+            txtLName.Text = myLN.ToString().Trim();
+
+            if ((myID.Length > 0) || (myFN.Length > 0) || (myLN.Length > 0))
+            {
+                DataSet aDataSet = new DataSet();
+                aDataSet = aDataTier.searchPhysician(myID, myFN, myLN);
+                grdPhysician.DataSource = aDataSet.Tables[0];
+
+                if (Cache["Physician_Data"] == null)
+                {
+                    Cache.Add("Physician_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                    grdPhysician.DataBind();
+                }
+            }
+            else
+            {
+                BindData();
+            }
         }
 
         private void BindData()
@@ -186,12 +244,6 @@ namespace WebDevFinalProject
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
-        }
-
-
-        protected void lbtnEdit_Click(object sender, CommandEventArgs e)
-        {
-            
         }
     }
 }

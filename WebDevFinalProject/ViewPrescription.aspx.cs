@@ -41,6 +41,7 @@ namespace WebDevFinalProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            btnSearch.Enabled = false;
             try
             {
                 if ((txtPrescription_ID.Text.Trim() != "") || (txtPATID.Text.Trim() != "") || (txtPHYID.Text.Trim() != ""))
@@ -68,6 +69,7 @@ namespace WebDevFinalProject
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
+            btnSearch.Enabled = true;
         }
 
         private void BindDataSearch()

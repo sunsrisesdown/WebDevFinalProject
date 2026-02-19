@@ -182,6 +182,7 @@ namespace WebDevFinalProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            btnSearch.Enabled = false;
             try
             {
                 if ((txtrefill_ID.Text.Trim() != "") || (txtrefill_ID.Text.Trim() != ""))
@@ -208,6 +209,7 @@ namespace WebDevFinalProject
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
+            btnSearch.Enabled = true;
         }
 
         private void BindDataSearch()

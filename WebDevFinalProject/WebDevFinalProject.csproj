@@ -70,6 +70,9 @@
     <Content Include="Default.aspx">
       <BrowseToURL>~/Default.aspx</BrowseToURL>
     </Content>
+    <Content Include="DisplayPatient.aspx" />
+    <Content Include="DisplayPhysician.aspx" />
+    <Content Include="DisplayPrescription.aspx" />
     <Content Include="DisplayRefill.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\delete.jpg" />
@@ -102,11 +105,11 @@
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.esm.min.js" />
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.js" />
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.min.js" />
-    <Content Include="DeletePrescription.aspx" />
     <Content Include="DeleteRefill.aspx" />
     <Content Include="images\main.jpeg" />
     <Content Include="MainScript.js" />
     <Content Include="MainStyleSheet.css" />
+    <Content Include="ModifyPrescription.aspx" />
     <Content Include="ModifyRefill.aspx">
       <BrowseToURL>~/Sites/ModifyRefill</BrowseToURL>
     </Content>
@@ -130,6 +133,27 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayPatient.aspx.cs">
+      <DependentUpon>DisplayPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayPatient.aspx.designer.cs">
+      <DependentUpon>DisplayPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayPhysician.aspx.cs">
+      <DependentUpon>DisplayPhysician.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayPhysician.aspx.designer.cs">
+      <DependentUpon>DisplayPhysician.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayPrescription.aspx.cs">
+      <DependentUpon>DisplayPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayPrescription.aspx.designer.cs">
+      <DependentUpon>DisplayPrescription.aspx</DependentUpon>
     </Compile>
     <Compile Include="DisplayRefill.aspx.cs">
       <DependentUpon>DisplayRefill.aspx</DependentUpon>
@@ -172,13 +196,6 @@
       <DependentUpon>AddRefill.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataTier.cs" />
-    <Compile Include="DeletePrescription.aspx.cs">
-      <DependentUpon>DeletePrescription.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeletePrescription.aspx.designer.cs">
-      <DependentUpon>DeletePrescription.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DeleteRefill.aspx.cs">
       <DependentUpon>DeleteRefill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +209,13 @@
     </Compile>
     <Compile Include="Main1.Master.designer.cs">
       <DependentUpon>Main1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPrescription.aspx.cs">
+      <DependentUpon>ModifyPrescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModifyPrescription.aspx.designer.cs">
+      <DependentUpon>ModifyPrescription.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModifyRefill.aspx.cs">
       <DependentUpon>ModifyRefill.aspx</DependentUpon>

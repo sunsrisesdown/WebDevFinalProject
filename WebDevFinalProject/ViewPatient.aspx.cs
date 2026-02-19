@@ -40,7 +40,65 @@ namespace WebDevFinalProject.pages
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            btnSearch.Enabled = false;
+            try
+            {
+                if ((txtStudentID.Text.Trim() != "") || (txtFName.Text.Trim() != "") || (txtLName.Text.Trim() != ""))
+                {
+                    try
+                    {
+                        Session["vPatientID"] = txtStudentID.Text.Trim();
+                        Session["vFName"] = txtFName.Text.Trim();
+                        Session["vLName"] = txtLName.Text.Trim();
+
+                        Cache.Remove("Patient_Data");
+                        BindDataSearch();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message, ex.InnerException);
+                    }
+                }
+                else
+                {
+                    BindData();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+            btnSearch.Enabled = true;
+        }
+
+        private void BindDataSearch()
+        {
+            DataTier aDataTier = new DataTier();
+
+            string myID = Convert.ToString(Session["vPatientID"]);
+            string myFN = Convert.ToString(Session["vFName"]);
+            string myLN = Convert.ToString(Session["vLName"]);
+
+            txtStudentID.Text = myID.ToString().Trim();
+            txtFName.Text = myFN.ToString().Trim();
+            txtLName.Text = myLN.ToString().Trim();
+
+            if ((myID.Length > 0) || (myFN.Length > 0) || (myLN.Length > 0))
+            {
+                DataSet aDataSet = new DataSet();
+                aDataSet = aDataTier.searchPhysician(myID, myFN, myLN);
+                grdPatient.DataSource = aDataSet.Tables[0];
+
+                if (Cache["Patient_Data"] == null)
+                {
+                    Cache.Add("Patient_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                    grdPatient.DataBind();
+                }
+            }
+            else
+            {
+                BindData();
+            }
         }
 
         private void BindData()

@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-auto">
-                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Patient</asp:HyperLink>
+                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Physician</asp:HyperLink>
             </div>
             <div class="col">
                 <asp:Label ID="Label1" runat="server" Text="Search criteria" CssClass="h5"></asp:Label>
@@ -86,13 +86,11 @@
 
 
                     <asp:HyperLinkField DataNavigateUrlFields="Physician_ID"
-                        DataNavigateUrlFormatString="~/Display.aspx?ID={0}&type=view"
+                        DataNavigateUrlFormatString="~/DisplayPhysician.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbtnEdit" runat="server" OnCommand="lbtnEdit_Click" CommandName="lbtnEdit" CommandArgument='<%# Eval("Physician_ID") %>' CssClass="btn btn-sm btn-outline-secondary">Edit</asp:LinkButton>
-                            &nbsp;
                             <asp:LinkButton ID="lbtnDelete" runat="server" OnCommand="Delete_Click" CommandName="lbtnDelete" CommandArgument='<%# Eval("Physician_ID") %>' CssClass="btn btn-sm btn-outline-danger">Delete</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>

@@ -28,7 +28,7 @@ namespace WebDevFinalProject
                 }
                 else if (Request.QueryString["type"].Trim().ToUpper() == "VIEW") // display
                 {
-                    GetStudent(Int32.Parse(Request.QueryString["ID"].Trim()));
+                    GetRefill(Int32.Parse(Request.QueryString["ID"].Trim()));
                 }
                 else  //    anything else
                 {
@@ -37,7 +37,7 @@ namespace WebDevFinalProject
             }
         }
 
-        public void GetStudent(Int32 refillID)
+        public void GetRefill(Int32 refillID)
         {
             //   the right record
             DataTier stuDT = new DataTier();
@@ -60,17 +60,5 @@ namespace WebDevFinalProject
                 txtDate.Enabled = false;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

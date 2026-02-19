@@ -324,7 +324,7 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "searchPatients";
+                cmdString.CommandText = "searchPatient";
 
                 cmdString.Parameters.Add("@patID", SqlDbType.VarChar, 6).Value = patid;
                 cmdString.Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname;
@@ -359,7 +359,7 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "searchPatients";
+                cmdString.CommandText = "searchPhysician";
 
                 cmdString.Parameters.Add("@phyID", SqlDbType.VarChar, 6).Value = phyID;
                 cmdString.Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname;

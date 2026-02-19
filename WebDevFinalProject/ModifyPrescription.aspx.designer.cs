@@ -11,7 +11,7 @@ namespace WebDevFinalProject
 {
 
 
-    public partial class DeletePrescription
+    public partial class ModifyPrescription
     {
     }
 }

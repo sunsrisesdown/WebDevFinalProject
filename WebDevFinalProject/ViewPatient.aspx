@@ -83,13 +83,11 @@
                     <asp:BoundField DataField="cell_phone" HeaderText="Phone" SortExpression="cell_phone" />
 
                     <asp:HyperLinkField DataNavigateUrlFields="Patient_ID"
-                        DataNavigateUrlFormatString="~/Display.aspx?ID={0}&type=view"
+                        DataNavigateUrlFormatString="~/DisplayPatient.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbtnEdit" runat="server" OnCommand="lbtnEdit_Click" CommandName="lbtnEdit" CommandArgument='<%# Eval("Patient_ID") %>' CssClass="btn btn-sm btn-outline-secondary">Edit</asp:LinkButton>
-                            &nbsp;
                             <asp:LinkButton ID="lbtnDelete" runat="server" OnCommand="Delete_Click" CommandName="lbtnDelete" CommandArgument='<%# Eval("Patient_ID") %>' CssClass="btn btn-sm btn-outline-danger">Delete</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
