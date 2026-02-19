@@ -159,6 +159,54 @@
             </td>
         </tr>
 
+         <tr>
+               <td>Work email:</td>
+               <td>
+                    <asp:TextBox ID="TxtWorkemail" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                       ControlToValidate="TxtWorkemail"
+                        ErrorMessage="* Required"
+                        CssClass="error" />
+               </td>
+           </tr>
+
+        <tr>
+    <td>Home Phone:</td>
+    <td>
+        <asp:TextBox ID="TxtHomePhone" runat="server" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+            ControlToValidate="TxtHomePhone"
+            ErrorMessage="* Required"
+            CssClass="error" />
+    </td>
+</tr>
+<tr>
+<td>Cell Phone:</td>
+<td>
+    <asp:TextBox ID="TxtCellPhone" runat="server" />
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+        ControlToValidate="TxtCellPhone"
+        ErrorMessage="* Required"
+        CssClass="error" />
+</td>
+</tr>
+<tr>
+<td>Work Phone:</td>
+<td>
+    <asp:TextBox ID="TxtWorkPhone" runat="server" />
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+        ControlToValidate="TxtWorkPhone"
+        ErrorMessage="* Required"
+        CssClass="error" />
+</td>
+
+
+
+
+
+
+
+
     </table>
 
     <div class="buttons">
