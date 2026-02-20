@@ -175,9 +175,7 @@ namespace WebDevFinalProject
 
         protected void lbtnEdit_Click(object sender, CommandEventArgs e)
         {
-            string recordToBeEdited;
-            recordToBeEdited = (e.CommandArgument.ToString().Trim());
-            Response.Redirect("ModifyRefill.aspx?ID=" + recordToBeEdited);
+            Response.Redirect("ModifyRefill.aspx");
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

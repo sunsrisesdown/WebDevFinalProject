@@ -15,13 +15,13 @@ namespace WebDevFinalProject
     {
 
         /// <summary>
-        /// Label1 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
         /// TxtBoxID control.
@@ -33,6 +33,15 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox TxtBoxID;
 
         /// <summary>
+        /// BtnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSearch;
+
+        /// <summary>
         /// RFV1 control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV1;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// TxtBoxNumber control.
@@ -60,22 +60,22 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox TxtBoxNumber;
 
         /// <summary>
-        /// RFV2 control.
+        /// TxtRefillDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV2;
+        protected global::System.Web.UI.WebControls.TextBox TxtRefillDate;
 
         /// <summary>
-        /// Label3 control.
+        /// CalendarExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
 
         /// <summary>
         /// BtnUpdate control.
@@ -87,12 +87,12 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.Button BtnUpdate;
 
         /// <summary>
-        /// BtnExit control.
+        /// BtnClear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnExit;
+        protected global::System.Web.UI.WebControls.Button BtnClear;
     }
 }

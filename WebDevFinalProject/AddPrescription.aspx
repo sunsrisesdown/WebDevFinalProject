@@ -1,83 +1,111 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="AddPrescription.aspx.cs" Inherits="WebDevFinalProject.AddPrescription" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
-    .auto-style2 {
-        width: 200px;
-    }
-    .auto-style3 {
-        width: 200px;
-        height: 44px;
-    }
-    .auto-style4 {
-        height: 44px;
-    }
-</style>
+    <title>Add Prescription</title>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-        <!-- Optional JavaScript GOES BEFORE EVERYTHING ELSE -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 				crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 			crossorigin="anonymous"></script>
 
-    <h2>Modify Prescription</h2>
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-    <div class="form-section">
-        <label>RX #:</label>
-        <asp:TextBox ID="txtRxNumber" runat="server"></asp:TextBox>
+<div class="container-fluid mt-2">
+
+    <div class="form-header">Add Prescription</div>
+
+    <div class="card shadow-sm p-4">
+
+        <div class="form-group">
+            <label class="form-label">RX #:</label>
+            <asp:TextBox ID="txtRxNumber" runat="server" CssClass="form-control"
+                ToolTip="Enter the prescription number (RX#)" />
+            <asp:RequiredFieldValidator ID="rfvRx" runat="server"
+                ControlToValidate="txtRxNumber" ErrorMessage="* Required" CssClass="error" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Patient ID:</label>
+            <asp:TextBox ID="txtPatientId" runat="server" CssClass="form-control"
+                ToolTip="Enter the patient’s ID" />
+            <asp:RequiredFieldValidator ID="rfvPatient" runat="server"
+                ControlToValidate="txtPatientId" ErrorMessage="* Required" CssClass="error" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Physician ID:</label>
+            <asp:TextBox ID="txtPhysicianId" runat="server" CssClass="form-control"
+                ToolTip="Enter the physician’s ID" />
+            <asp:RequiredFieldValidator ID="rfvPhysician" runat="server"
+                ControlToValidate="txtPhysicianId" ErrorMessage="* Required" CssClass="error" />
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <label class="form-label">Prescription Amount:</label>
+            <asp:TextBox ID="txtPrescriptionAmt" runat="server" CssClass="form-control"
+                ToolTip="Enter the amount prescribed (optional)" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Refill Count:</label>
+            <asp:TextBox ID="txtRefillCount" runat="server" CssClass="form-control"
+                ToolTip="Enter how many refills are allowed (optional)" />
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <label class="form-label">Prescription Start Date:</label>
+            <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control"
+                ToolTip="Select the prescription start date" />
+            <ajaxToolkit:CalendarExtender ID="CalendarExtenderStart" runat="server"
+                TargetControlID="txtStartDate"
+                Format="MM/dd/yyyy" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Prescription End Date:</label>
+            <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control"
+                ToolTip="Select the prescription end date" />
+            <ajaxToolkit:CalendarExtender ID="CalendarExtenderEnd" runat="server"
+                TargetControlID="txtEndDate"
+                Format="MM/dd/yyyy" />
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <label class="form-label">Medication Name:</label>
+            <asp:TextBox ID="txtMedication" runat="server" CssClass="form-control"
+                ToolTip="Enter the medication name" />
+            <asp:RequiredFieldValidator ID="rfvMedication" runat="server"
+                ControlToValidate="txtMedication" ErrorMessage="* Required" CssClass="error" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Dosage:</label>
+            <asp:TextBox ID="txtDosage" runat="server" CssClass="form-control"
+                ToolTip="Enter the dosage" />
+            <asp:RequiredFieldValidator ID="rfvDosage" runat="server"
+                ControlToValidate="txtDosage" ErrorMessage="* Required" CssClass="error" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Prescription Info:</label>
+            <asp:TextBox ID="txtPrescritpionInfo" runat="server" CssClass="form-control"
+                ToolTip="Additional notes or instructions (optional)" />
+        </div>
+
+        <div class="text-right mt-3">
+            <asp:Button ID="btnAdd" runat="server" Text="Add Prescription" CssClass="btn btn-primary"
+                ToolTip="Click to save this prescription" OnClick="btnAdd_Click" />
+
+            <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-secondary ml-2"
+                ToolTip="Clear all fields" OnClick="btnClear_Click" />
+        </div>
+
     </div>
 
-    <div class="form-section">
-        <label>Patient ID:</label>
-        <asp:TextBox ID="txtPatientId" runat="server"></asp:TextBox>
-    </div>
-    
-    <div class="form-section">
-        <label>Physician ID:</label>
-        <asp:TextBox ID="txtPhysicianId" runat="server"></asp:TextBox>
-    </div>
-    
-    <div class="form-section">
-        <label>Prescription Amount:</label>
-        <asp:TextBox ID="txtPrescriptionAmt" runat="server"></asp:TextBox>
-    </div>
-    
-    <div class="form-section">
-        <label>Refill Count:</label>
-        <asp:TextBox ID="txtRefillCount" runat="server"></asp:TextBox>
-    </div>
-
-    <div class="form-section">
-        <label>Prescription Start Date:</label>
-        <asp:Calendar ID="calPrescriptionStartDate" runat="server" style="margin-left: 200px;"></asp:Calendar>
-    </div>
-    
-    <div class="form-section">
-        <label>Prescription End Date:</label>
-        <asp:Calendar ID="calPrescriptionEndDate" runat="server" style="margin-left: 200px;"></asp:Calendar>
-    </div>
-
-
-    <div class="form-section">
-        <label>Medication Name:</label>
-        <asp:TextBox ID="txtMedication" runat="server"></asp:TextBox>
-    </div>
-
-    <div class="form-section">
-        <label>Dosage:</label>
-        <asp:TextBox ID="txtDosage" runat="server" placeholder="e.g., 10mg"></asp:TextBox>
-    </div>
-
-    <div class="form-section">
-        <label>Frequency:</label>
-        <asp:TextBox ID="txtFrequency" runat="server"></asp:TextBox>
-    </div>
-    
-    <div class="form-section">
-        <label>Prescription Info:</label>
-        <asp:TextBox ID="txtPrescritpionInfo" runat="server"></asp:TextBox>
-    </div>
-
-    <asp:Button ID="btnAdd" runat="server" Text="Add Prescription" CssClass="btn" OnClick="btnAdd_Click" />
+</div>
 
 </asp:Content>

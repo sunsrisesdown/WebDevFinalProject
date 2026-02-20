@@ -73,12 +73,10 @@
     <Content Include="DisplayPatient.aspx" />
     <Content Include="DisplayPhysician.aspx" />
     <Content Include="DisplayPrescription.aspx" />
-    <Content Include="DisplayRefill.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\delete.jpg" />
     <Content Include="images\edit.jpg" />
     <Content Include="ImportedFiles\main.css" />
-    <Content Include="ImportedFiles\State.xml" />
     <Content Include="AddPatient.aspx" />
     <Content Include="AddPhysician.aspx" />
     <Content Include="AddPrescription.aspx" />
@@ -105,7 +103,6 @@
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.esm.min.js" />
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.js" />
     <Content Include="bootstrap\bootstrap-5.3.8-dist\js\bootstrap.min.js" />
-    <Content Include="DeleteRefill.aspx" />
     <Content Include="images\main.jpeg" />
     <Content Include="MainScript.js" />
     <Content Include="MainStyleSheet.css" />
@@ -155,18 +152,9 @@
     <Compile Include="DisplayPrescription.aspx.designer.cs">
       <DependentUpon>DisplayPrescription.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DisplayRefill.aspx.cs">
-      <DependentUpon>DisplayRefill.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DisplayRefill.aspx.designer.cs">
-      <DependentUpon>DisplayRefill.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ImportedFiles\state.cs" />
-    <Compile Include="ImportedFiles\StateManager.cs" />
     <Compile Include="AddPatient.aspx.cs">
       <DependentUpon>AddPatient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,13 +184,6 @@
       <DependentUpon>AddRefill.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataTier.cs" />
-    <Compile Include="DeleteRefill.aspx.cs">
-      <DependentUpon>DeleteRefill.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteRefill.aspx.designer.cs">
-      <DependentUpon>DeleteRefill.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Main1.Master.cs">
       <DependentUpon>Main1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

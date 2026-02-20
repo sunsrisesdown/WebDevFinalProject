@@ -15,13 +15,13 @@ namespace WebDevFinalProject
     {
 
         /// <summary>
-        /// Label1 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
         /// TxtBoxNumber control.
@@ -42,15 +42,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV1;
 
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
         /// TxtBoxID control.
         /// </summary>
         /// <remarks>
@@ -69,13 +60,22 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV2;
 
         /// <summary>
-        /// Label3 control.
+        /// TxtRefillDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.TextBox TxtRefillDate;
+
+        /// <summary>
+        /// CalendarExtender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
 
         /// <summary>
         /// BtnRefill control.
@@ -87,12 +87,12 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.Button BtnRefill;
 
         /// <summary>
-        /// BtnExit control.
+        /// BtnClear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnExit;
+        protected global::System.Web.UI.WebControls.Button BtnClear;
     }
 }

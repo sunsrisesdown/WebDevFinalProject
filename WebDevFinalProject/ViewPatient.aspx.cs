@@ -245,11 +245,5 @@ namespace WebDevFinalProject.pages
                 throw new Exception(ex.Message, ex.InnerException);
             }
         }
-
-
-        protected void lbtnEdit_Click(object sender, CommandEventArgs e)
-        {
-
-        }
     }
 }

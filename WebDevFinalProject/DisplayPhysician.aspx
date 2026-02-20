@@ -4,191 +4,165 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style4 {
-            height: 32px;
+    <title>Physician Details</title>
+
+    <link href="/ImportedFiles/main.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
         }
-        .auto-style5 {
-            height: 32px;
-            width: 127px;
+
+        .popup-wrapper {
+            width: 650px;
+            margin: 40px auto;
         }
-        .auto-style7 {
-            width: 127px;
+
+        .card {
+            border-radius: 6px;
         }
-        .auto-style9 {
-            width: 97px;
-            height: 32px;
+
+        .form-header {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .btn-close {
+            min-width: 120px;
         }
     </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label1" runat="server" Text="Physician ID:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtPHY" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label2" runat="server" Text="First Name:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtFN" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label3" runat="server" Text="Last Name:"></asp:Label>
-                </td>
-                <td class="auto-style9">
-                    <asp:TextBox ID="txtLN" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label4" runat="server" Text="Middle Name:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtMI" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label5" runat="server" Text="Date of Birth:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtDOB" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label6" runat="server" Text="Gender"></asp:Label>
-                </td>
-                <td class="auto-style9">
-                    <asp:TextBox ID="txtGen" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label7" runat="server" Text="Hire Date:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtDT" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label21" runat="server" Text="Salary:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtSAL" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label20" runat="server" Text="Specialty One:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtSP1" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label19" runat="server" Text="Specialty Two:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtSP2" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label18" runat="server" Text="Specialty Three:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtSP3" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label17" runat="server" Text="Work Email:"></asp:Label>
-                </td>
-                <td class="auto-style5">
-                    <asp:TextBox ID="txtWE" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label16" runat="server" Text="Personal Email:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtPE" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label15" runat="server" Text="Home Phone:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtHP" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label14" runat="server" Text="Cell Phone:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtCellP" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label13" runat="server" Text="Work Phone:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtWP" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label12" runat="server" Text="Address:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtADD" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label10" runat="server" Text="City:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtCIT" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="Label9" runat="server" Text="State:"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtSTA" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style7">
-                    <asp:Label ID="Label11" runat="server" Text="ZIP:"></asp:Label>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtZIP" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-        </table>
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+
+        <div class="popup-wrapper">
+
+            <div class="form-header">Physician Details</div>
+
+            <div class="card shadow-sm p-4">
+
+                <div class="form-group">
+                    <label class="form-label">Physician ID:</label>
+                    <asp:TextBox ID="txtPHY" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">First Name:</label>
+                    <asp:TextBox ID="txtFN" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Last Name:</label>
+                    <asp:TextBox ID="txtLN" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Middle Name:</label>
+                    <asp:TextBox ID="txtMI" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Date of Birth:</label>
+                    <asp:TextBox ID="txtDOB" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Gender:</label>
+                    <asp:TextBox ID="txtGen" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Hire Date:</label>
+                    <asp:TextBox ID="txtDT" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Salary:</label>
+                    <asp:TextBox ID="txtSAL" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Specialty One:</label>
+                    <asp:TextBox ID="txtSP1" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Specialty Two:</label>
+                    <asp:TextBox ID="txtSP2" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Specialty Three:</label>
+                    <asp:TextBox ID="txtSP3" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Work Email:</label>
+                    <asp:TextBox ID="txtWE" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Personal Email:</label>
+                    <asp:TextBox ID="txtPE" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Home Phone:</label>
+                    <asp:TextBox ID="txtHP" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Cell Phone:</label>
+                    <asp:TextBox ID="txtCellP" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Work Phone:</label>
+                    <asp:TextBox ID="txtWP" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Address:</label>
+                    <asp:TextBox ID="txtADD" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">City:</label>
+                    <asp:TextBox ID="txtCIT" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">State:</label>
+                    <asp:TextBox ID="txtSTA" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">ZIP:</label>
+                    <asp:TextBox ID="txtZIP" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="text-right mt-3">
+                    <asp:Button ID="Button1" runat="server" Text="Close"
+                        CssClass="btn btn-secondary btn-close"
+                        OnClick="Button1_Click" />
+                </div>
+
+            </div>
+        </div>
+
     </form>
 </body>
 </html>

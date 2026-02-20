@@ -15,6 +15,15 @@ namespace WebDevFinalProject
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// txtPatient control.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,24 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
+        /// DOB_Calendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender DOB_Calendar;
+
+        /// <summary>
+        /// rfvDOB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDOB;
+
+        /// <summary>
         /// cboGender control.
         /// </summary>
         /// <remarks>
@@ -103,6 +130,15 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAcct;
+
+        /// <summary>
+        /// rfvAcct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAcct;
 
         /// <summary>
         /// txtStreet control.
@@ -123,13 +159,13 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtCity;
 
         /// <summary>
-        /// txtState control.
+        /// cboState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtState;
+        protected global::System.Web.UI.WebControls.DropDownList cboState;
 
         /// <summary>
         /// txtZip control.

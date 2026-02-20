@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 
 namespace WebDevFinalProject
@@ -416,6 +417,39 @@ namespace WebDevFinalProject
             }
         }
 
+        public DataSet searchRefill(Int32 id)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "searchRefillID";
+
+                cmdString.Parameters.Add("@refill_id", SqlDbType.Int).Value = id;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         public DataSet searchPrescription(string rx_number, string patID, string phyID)
         {
             try
@@ -602,6 +636,46 @@ namespace WebDevFinalProject
                 myConn.Close();
             }
         }
+
+        public void UpdatePrescription(string rx, string phy, string pat, decimal amt, string start, string end, Int32 count, string med, string dosage, string info)
+        {
+            try
+            {
+                //open connection
+                myConn.Open();
+                cmdString.Parameters.Clear();
+
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "updatePrescriptionImp";
+
+                // Define input parameter
+                cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx;
+                cmdString.Parameters.Add("@phy", SqlDbType.VarChar, 6).Value = phy;
+                cmdString.Parameters.Add("@pat", SqlDbType.VarChar, 6).Value = pat;
+                cmdString.Parameters.Add("@amt", SqlDbType.Decimal).Value = amt;
+                cmdString.Parameters.Add("@start", SqlDbType.Date).Value = start;
+                cmdString.Parameters.Add("@end", SqlDbType.Date).Value = end;
+                cmdString.Parameters.Add("@count", SqlDbType.Int).Value = count;
+                cmdString.Parameters.Add("@med", SqlDbType.VarChar, 25).Value = med;
+                cmdString.Parameters.Add("@dosage", SqlDbType.VarChar, 25).Value = dosage;
+                cmdString.Parameters.Add("@info", SqlDbType.VarChar, 50).Value = info;
+
+                //execute statement
+                cmdString.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
 
         public void UpdateRefill(Int32 refillID, string rxNumber, string filled)
         {

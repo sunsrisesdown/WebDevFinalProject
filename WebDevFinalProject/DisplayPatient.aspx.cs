@@ -84,7 +84,21 @@ namespace WebDevFinalProject
 
         protected void btnClose_Click(object sender, EventArgs e)
         {
+            System.Text.StringBuilder cb = new System.Text.StringBuilder();
+            // cb.Append(" opener.location.href = 'home.aspx';");
+            cb.Append("var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;");
+            cb.Append(" if (ie7)");
+            cb.Append(" { ");
+            cb.Append("window.open('','_parent','');");
+            cb.Append("window.close();");
+            cb.Append(" }");
+            cb.Append(" else ");
+            cb.Append(" { ");
 
+            cb.Append(" window.open('', '_self', '');;");
+            cb.Append(" window.close();;");
+            cb.Append(" }");
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "CloseReloadScript", cb.ToString(), true);
         }
     }
 }

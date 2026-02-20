@@ -250,8 +250,8 @@ namespace WebDevFinalProject
 
 
         protected void lbtnEdit_Click(object sender, CommandEventArgs e)
-        {
-
+        { 
+            Response.Redirect("ModifyPrescription.aspx");
         }
     }
 }

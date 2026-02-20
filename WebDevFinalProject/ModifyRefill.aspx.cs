@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,13 +27,90 @@ namespace WebDevFinalProject
                 string rxNumber = TxtBoxNumber.Text/*, date = dtpDate.Value.ToString("yyyy-MM-dd")*/;
                 Int32 refillID = Int32.Parse(TxtBoxID.Text.Trim());
 
-                DataTier dt = new DataTier();
-                dt.UpdateRefill(refillID, rxNumber, null);
+                if (refillID > 0)
+                {
+                    try
+                    {
+                        DateTime date = DateTime.Parse(TxtRefillDate.Text.Trim());
+                        
+                        try
+                        {
+                            DataTier dt = new DataTier();
+                            dt.UpdateRefill(refillID, rxNumber, date.ToString("yyyy-MM-dd"));
+
+                            Response.Write("<script>alert('Error: Refill has been modified!');</script>");
+                            BtnClear_Click(sender, e);
+                        }
+                        catch 
+                        {
+                            Response.Write("<script>alert('Error: Either prescription doesn't exist or SQL failure!');</script>");
+                            TxtBoxID.Focus();
+                        }
+
+                    }
+                    catch
+                    {
+                        Response.Write("<script>alert('Error: Invalid Date!');</script>");
+                        TxtRefillDate.Focus();
+                    }   
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error: Invalid ID!');</script>");
+                    TxtBoxID.Focus();
+                }
             }
-            catch (Exception ex)
+            catch
             {
+                Response.Write("<script>alert('Error: Invalid ID!');</script>");
+                TxtBoxID.Focus();
+            }
+        }
+
+        protected void BtnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Int32 id = Int32.Parse(TxtBoxID.Text);
+                if (id > 0)
+                {
+                    DataTier dt = new DataTier();
+
+                    try
+                    {
+                        DataSet ds = dt.searchRefill(id);
+
+                        TxtBoxID.Text = ds.Tables[0].Rows[0]["refill_id"].ToString();
+                        TxtBoxNumber.Text = ds.Tables[0].Rows[0]["rx_number"].ToString();
+                        TxtRefillDate.Text = ds.Tables[0].Rows[0]["date_filled"].ToString();
+
+                    }
+                    catch
+                    {
+                        Response.Write("<script>alert('Error: Either prescription doesn't exist or SQL failure!');</script>");
+                        TxtBoxID.Focus();
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error: Invalid ID!');</script>");
+                    TxtBoxID.Focus();
+                }
+            }
+            catch
+            {
+                Response.Write("<script>alert('Error: Invalid ID!');</script>");
+                TxtBoxID.Focus();
 
             }
+            
+        }
+
+        protected void BtnClear_Click(object sender, EventArgs e)
+        {
+            TxtBoxID.Text = string.Empty;
+            TxtBoxNumber.Text = string.Empty;
+            TxtRefillDate.Text = string.Empty;
         }
     }
 }

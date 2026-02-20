@@ -91,11 +91,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/DeleteRefill.aspx") %>" class="sidebar-link">
-                            Delete Refill
-                        </a>
-                    </li>
-                    <li>
                         <a href="<%: ResolveUrl("~/ModifyRefill.aspx") %>" class="sidebar-link">
                             Modify Refill
                         </a>

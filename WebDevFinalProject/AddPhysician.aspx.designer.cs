@@ -15,6 +15,15 @@ namespace WebDevFinalProject
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// txtPhysicianID control.
         /// </summary>
         /// <remarks>
@@ -87,13 +96,22 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// DOB_Calendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::AjaxControlToolkit.CalendarExtender DOB_Calendar;
+
+        /// <summary>
+        /// rfvDOB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDOB;
 
         /// <summary>
         /// cboGender control.
@@ -114,15 +132,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtStreet;
 
         /// <summary>
-        /// rfvStreet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStreet;
-
-        /// <summary>
         /// txtCity control.
         /// </summary>
         /// <remarks>
@@ -132,31 +141,13 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtCity;
 
         /// <summary>
-        /// rfvCity control.
+        /// cboState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCity;
-
-        /// <summary>
-        /// txtState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtState;
-
-        /// <summary>
-        /// rfvState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
+        protected global::System.Web.UI.WebControls.DropDownList cboState;
 
         /// <summary>
         /// txtZip control.
@@ -168,15 +159,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox txtZip;
 
         /// <summary>
-        /// rfvZip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZip;
-
-        /// <summary>
         /// txtSpec1 control.
         /// </summary>
         /// <remarks>
@@ -184,15 +166,6 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSpec1;
-
-        /// <summary>
-        /// rfvSpec1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSpec1;
 
         /// <summary>
         /// txtSpec2 control.
@@ -220,6 +193,15 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDateHired;
+
+        /// <summary>
+        /// Hired_Calendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender Hired_Calendar;
 
         /// <summary>
         /// rfvDateHired control.
@@ -258,15 +240,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox TxtWorkemail;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
         /// txtPersonal control.
         /// </summary>
         /// <remarks>
@@ -274,15 +247,6 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPersonal;
-
-        /// <summary>
-        /// RequiredFieldValidator5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// TxtHomePhone control.
@@ -294,15 +258,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox TxtHomePhone;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
         /// TxtCellPhone control.
         /// </summary>
         /// <remarks>
@@ -312,15 +267,6 @@ namespace WebDevFinalProject
         protected global::System.Web.UI.WebControls.TextBox TxtCellPhone;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-
-        /// <summary>
         /// TxtWorkPhone control.
         /// </summary>
         /// <remarks>
@@ -328,15 +274,6 @@ namespace WebDevFinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtWorkPhone;
-
-        /// <summary>
-        /// RequiredFieldValidator4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// btnAdd control.
