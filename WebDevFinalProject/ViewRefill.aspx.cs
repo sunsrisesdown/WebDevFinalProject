@@ -183,7 +183,7 @@ namespace WebDevFinalProject
             btnSearch.Enabled = false;
             try
             {
-                if ((txtrefill_ID.Text.Trim() != "") || (txtrefill_ID.Text.Trim() != ""))
+                if ((txtrefill_ID.Text.Trim() != "") || (txtRX_Number.Text.Trim() != ""))
                 {
                     try
                     {
@@ -195,7 +195,7 @@ namespace WebDevFinalProject
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message, ex.InnerException);
+
                     }
                 }
                 else
@@ -205,7 +205,7 @@ namespace WebDevFinalProject
             } 
             catch ( Exception ex )
             {
-                throw new Exception(ex.Message, ex.InnerException);
+
             }
             btnSearch.Enabled = true;
         }
@@ -214,27 +214,46 @@ namespace WebDevFinalProject
         {
             DataTier aDataTier = new DataTier();
 
-            Int32 myID = Int32.Parse(Convert.ToString(Session["vRefill_ID"]).Trim());
-            string myRX = Convert.ToString(Session["vRx_numbers"]);
-
-            txtrefill_ID.Text = myID.ToString().Trim();
-            txtRX_Number.Text = myRX;
-
-            if ((myID > 0) || (myRX.Length > 0))
+            try
             {
-                DataSet aDataSet = new DataSet();
-                aDataSet = aDataTier.searchRefill(myID, myRX);
-                grdRefills.DataSource = aDataSet.Tables[0];
+                Int32 myID = Int32.Parse(Convert.ToString(Session["vRefill_ID"]));
+                string myRX = Convert.ToString(Session["vRx_numbers"]);
 
-                if (Cache["Refill_Data"] == null)
+                txtrefill_ID.Text = myID.ToString().Trim();
+                txtRX_Number.Text = myRX;
+
+                if ((myID > 0) || (myRX.Length > 0))
                 {
-                    Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
-                    grdRefills.DataBind();
+                    DataSet aDataSet = new DataSet();
+                    aDataSet = aDataTier.searchRefill(myID, myRX);
+                    grdRefills.DataSource = aDataSet.Tables[0];
+
+                    if (Cache["Refill_Data"] == null)
+                    {
+                        Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                        grdRefills.DataBind();
+                    }
+                }
+                else
+                {
+                    BindData();
                 }
             }
-            else
+            catch
             {
-                BindData();
+                string myRX = Convert.ToString(Session["vRx_numbers"]);
+                if (myRX.Length > 0)
+                {
+                    DataSet aDataSet = new DataSet();
+                    aDataSet = aDataTier.searchRefillRX(myRX);
+                    grdRefills.DataSource = aDataSet.Tables[0];
+
+                    if (Cache["Refill_Data"] == null)
+                    {
+                        Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                        grdRefills.DataBind();
+                    }
+                }
             }
         }
 

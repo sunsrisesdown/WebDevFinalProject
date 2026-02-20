@@ -40,7 +40,7 @@ namespace WebDevFinalProject
                             dataSet2 = dt.searchRefillRX(rxNumber);
                             Int32 count = dataSet2.Tables[0].Rows.Count;
 
-                            if (count <= rx_Max)
+                            if (count < rx_Max)
                             {
                                 try
                                 {
