@@ -1,172 +1,153 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="AddPatient.aspx.cs" Inherits="WebDevFinalProject.AddPatient" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title>Add Patient</title>
-
-<style>
-    body {
-        font-family: Arial;
-        background-color: #e6e6e6;
-    }
-
-    .mainBox {
-        width: 700px;
-        background-color: white;
-        padding: 15px;
-        border: 1px solid black;
-    }
-
-    h2 {
-        text-align: center;
-        background-color: #cccccc;
-        padding: 5px;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    td {
-        padding: 5px;
-    }
-
-    .buttons {
-     
-  
-    }
-
-    .error {
-        color: black;
-        font-size: 12px;
-    }
-</style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="mainBox">
 
-    <h2>Add New Patient</h2>
+<div class="container-fluid mt-2">
 
+    <div class="form-header">Add New Patient</div>
 
+    <div class="card shadow-sm p-4">
 
-    <table border="0">
-        <tr>
-            <td>Patient ID:</td>
-            <td>
-                <asp:TextBox ID="txtPatient" runat="server" />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Patient ID:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtPatient" runat="server" CssClass="form-control" />
                 <asp:RequiredFieldValidator ID="rfvPatient" runat="server"
                     ControlToValidate="txtPatient"
                     ErrorMessage="* Required"
                     CssClass="error" />
-            </td>
-        </tr>
+            </div>
+        </div>
 
-        <tr>
-            <td>First Name:</td>
-            <td>
-                <asp:TextBox ID="txtFirst" runat="server" />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">First Name:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtFirst" runat="server" CssClass="form-control" />
                 <asp:RequiredFieldValidator ID="rfvFirst" runat="server"
                     ControlToValidate="txtFirst"
                     ErrorMessage="* Required"
                     CssClass="error" />
-            </td>
-        </tr>
+            </div>
+        </div>
 
-        <tr>
-            <td>Middle Initial:</td>
-            <td>
-                <asp:TextBox ID="txtMiddle" runat="server" MaxLength="1" Width="40px" />
-            </td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Middle Initial:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtMiddle" runat="server" CssClass="form-control" MaxLength="1" Style="max-width:80px;" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Last Name:</td>
-            <td>
-                <asp:TextBox ID="txtLast" runat="server" />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Last Name:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtLast" runat="server" CssClass="form-control" />
                 <asp:RequiredFieldValidator ID="rfvLast" runat="server"
                     ControlToValidate="txtLast"
                     ErrorMessage="* Required"
                     CssClass="error" />
-            </td>
-        </tr>
+            </div>
+        </div>
 
-        <tr>
-            <td>Date of Birth:</td>
-            <td>
-                <asp:TextBox ID="txtDOB" runat="server" TextMode="Date" />
-            </td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Date of Birth:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtDOB" runat="server" TextMode="Date" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Gender:</td>
-            <td>
-                <asp:DropDownList ID="cboGender" runat="server">
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Gender:</label>
+            <div class="col-sm-9">
+                <asp:DropDownList ID="cboGender" runat="server" CssClass="form-control">
                     <asp:ListItem Text="Select Gender" Value="" />
                     <asp:ListItem>Male</asp:ListItem>
                     <asp:ListItem>Female</asp:ListItem>
                     <asp:ListItem>Other</asp:ListItem>
                 </asp:DropDownList>
-            </td>
-        </tr>
+            </div>
+        </div>
 
-        <tr>
-            <td>Account Balance:</td>
-            <td>
-                <asp:TextBox ID="txtAcct" runat="server" />
-            </td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Account Balance:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtAcct" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Street:</td>
-            <td><asp:TextBox ID="txtStreet" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Street:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtStreet" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>City:</td>
-            <td><asp:TextBox ID="txtCity" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">City:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>State:</td>
-            <td><asp:TextBox ID="txtState" runat="server" Width="50px" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">State:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtState" runat="server" CssClass="form-control" Style="max-width:100px;" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Zip:</td>
-            <td><asp:TextBox ID="txtZip" runat="server" MaxLength="5" Width="80px" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Zip:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtZip" runat="server" CssClass="form-control" MaxLength="5" Style="max-width:120px;" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Home Phone:</td>
-            <td><asp:TextBox ID="txtHome" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Home Phone:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtHome" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Cell Phone:</td>
-            <td><asp:TextBox ID="txtCell" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Cell Phone:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtCell" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Work Phone:</td>
-            <td><asp:TextBox ID="txtWorkP" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Work Phone:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtWorkP" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Work Email:</td>
-            <td><asp:TextBox ID="txtWorkE" runat="server" /></td>
-        </tr>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Work Email:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtWorkE" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-        <tr>
-            <td>Personal Email:</td>
-            <td><asp:TextBox ID="txtPersE" runat="server" /></td>
-        </tr>
-    </table>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label form-label">Personal Email:</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtPersE" runat="server" CssClass="form-control" />
+            </div>
+        </div>
 
-    <div class="buttons">
-        <asp:Button ID="btnAdd" runat="server" Text="Add Patient"
-            OnClick="btnAdd_Click" />
-        &nbsp;
-        <asp:Button ID="btnClear" runat="server" Text="Clear"
-            OnClick="btnClear_Click" />
+        <div class="text-right mt-3">
+            <asp:Button ID="btnAdd" runat="server" Text="Add Patient" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
+            <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-secondary ml-2" OnClick="btnClear_Click" />
+        </div>
+
     </div>
 
 </div>
+
 </asp:Content>
