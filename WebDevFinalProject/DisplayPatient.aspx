@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="/ImportedFiles/main.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
