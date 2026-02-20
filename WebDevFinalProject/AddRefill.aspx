@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="AddRefill.aspx.cs" Inherits="WebDevFinalProject.AddRefill" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title>Add Refill</title>
 </asp:Content>

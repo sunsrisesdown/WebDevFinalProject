@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XYZ INC</title>
-    <link href="images/main.jpeg" rel="icon" type="image/x-icon" />
+    <link href="~/images/main.jpeg" rel="icon" type="image/x-icon" />
 
-    <link href="bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="MainStyleSheet.css" rel="stylesheet" />
+    <link href="~/bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/MainStyleSheet.css" rel="stylesheet" />
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
 
 
