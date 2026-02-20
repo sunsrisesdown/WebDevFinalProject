@@ -74,8 +74,17 @@
     <Content Include="DisplayPhysician.aspx" />
     <Content Include="DisplayPrescription.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\Add Prescription.jpg" />
     <Content Include="images\delete.jpg" />
     <Content Include="images\edit.jpg" />
+    <Content Include="images\Modify Refill.jpeg" />
+    <Content Include="images\ModifyPrescription.jpg" />
+    <Content Include="images\Patient.jpg" />
+    <Content Include="images\Physician.jpg" />
+    <Content Include="images\prescription_refills.jpg" />
+    <Content Include="images\View Patient.jpg" />
+    <Content Include="images\View Physician.jpg" />
+    <Content Include="images\ViewRecords.jpg" />
     <Content Include="ImportedFiles\main.css" />
     <Content Include="AddPatient.aspx" />
     <Content Include="AddPhysician.aspx" />
