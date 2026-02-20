@@ -71,9 +71,9 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/modify_refill.jpg" class="card-img-top" alt="Modify Refill">
+                <img src="images/Modify_refill.jpg" class="card-img-top" alt="Modify Refill">
                 <div class="card-body">
-                    <h5 class="card-title">Modify Refill</h5>
+                    <h5 class="card-title">Modify_Refill</h5>
                     <p class="card-text">Search and update refill records.</p>
                     <a href="<%: ResolveUrl("~/ModifyRefill.aspx") %>" class="btn btn-primary w-100">Modify Refill</a>
                 </div>
