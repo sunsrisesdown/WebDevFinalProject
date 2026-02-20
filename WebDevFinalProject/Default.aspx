@@ -14,7 +14,6 @@
     <div class="row g-4">
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/patient.jpg" class="card-img-top" alt="Patient">
                 <div class="card-body">
                     <h5 class="card-title">Patient</h5>
                     <p class="card-text">Add new patients or view existing patient records.</p>
@@ -25,7 +24,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/physician.jpg" class="card-img-top" alt="Physician">
                 <div class="card-body">
                     <h5 class="card-title">Physician</h5>
                     <p class="card-text">Add or update physician information.</p>
@@ -36,7 +34,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/prescription.jpg" class="card-img-top" alt="Prescription">
                 <div class="card-body">
                     <h5 class="card-title">Add Prescription</h5>
                     <p class="card-text">Create a new prescription for a patient.</p>
@@ -47,7 +44,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/modify_prescription.jpg" class="card-img-top" alt="Modify Prescription">
                 <div class="card-body">
                     <h5 class="card-title">Modify Prescription</h5>
                     <p class="card-text">Search and update existing prescriptions.</p>
@@ -59,7 +55,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/refill.jpg" class="card-img-top" alt="Add Refill">
                 <div class="card-body">
                     <h5 class="card-title">Add Refill</h5>
                     <p class="card-text">Add a refill to an existing prescription.</p>
@@ -71,7 +66,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/Modify_refill.jpg" class="card-img-top" alt="Modify Refill">
                 <div class="card-body">
                     <h5 class="card-title">Modify_Refill</h5>
                     <p class="card-text">Search and update refill records.</p>
@@ -83,7 +77,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/view.jpg" class="card-img-top" alt="View Records">
                 <div class="card-body">
                     <h5 class="card-title">View Records</h5>
                     <p class="card-text">Browse all patients, physicians, prescriptions, and refills.</p>
@@ -94,7 +87,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/view_patient.jpg" class="card-img-top" alt="View Patient">
                 <div class="card-body">
                     <h5 class="card-title">View Patient</h5>
                     <p class="card-text">Browse all patient records and details.</p>
@@ -105,7 +97,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/view_physician.jpg" class="card-img-top" alt="View Physician">
                 <div class="card-body">
                     <h5 class="card-title">View Physician</h5>
                     <p class="card-text">Review physician profiles and contact information.</p>
@@ -116,7 +107,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/view_prescription.jpg" class="card-img-top" alt="View Prescription">
                 <div class="card-body">
                     <h5 class="card-title">View Prescription</h5>
                     <p class="card-text">Search and review all prescriptions on file.</p>
@@ -127,7 +117,6 @@
 
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <img src="images/view_refill.jpg" class="card-img-top" alt="View Refill">
                 <div class="card-body">
                     <h5 class="card-title">View Refill(s)</h5>
                     <p class="card-text">Browse refill history and details for prescriptions.</p>
