@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Prescription Details</title>
 
-    <link href="/ImportedFiles/main.css" rel="stylesheet" />
+    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
 
     <style>
         body {

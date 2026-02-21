@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Patient Details</title>
-    <link href="/ImportedFiles/main.css" rel="stylesheet" />
+    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
 
     <style>
         body {

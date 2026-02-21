@@ -74,8 +74,17 @@
     <Content Include="DisplayPhysician.aspx" />
     <Content Include="DisplayPrescription.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\Add Prescription.jpg" />
     <Content Include="images\delete.jpg" />
     <Content Include="images\edit.jpg" />
+    <Content Include="images\Modify Refill.jpeg" />
+    <Content Include="images\ModifyPrescription.jpg" />
+    <Content Include="images\Patient.jpg" />
+    <Content Include="images\Physician.jpg" />
+    <Content Include="images\prescription_refills.jpg" />
+    <Content Include="images\View Patient.jpg" />
+    <Content Include="images\View Physician.jpg" />
+    <Content Include="images\ViewRecords.jpg" />
     <Content Include="ImportedFiles\main.css" />
     <Content Include="AddPatient.aspx" />
     <Content Include="AddPhysician.aspx" />
@@ -111,13 +120,13 @@
       <BrowseToURL>~/Sites/ModifyRefill</BrowseToURL>
     </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
-    <Content Include="ViewPatient.aspx" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="ViewPatient.aspx" />
     <Content Include="ViewPhysician.aspx" />
     <Content Include="ViewPrescription.aspx" />
     <Content Include="ViewRefill.aspx" />
@@ -297,13 +306,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -311,4 +313,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
 </Project>

@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="ModifyPrescription.aspx.cs" Inherits="WebDevFinalProject.ModifyPrescription" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title>Modify Prescription</title>
 </asp:Content>

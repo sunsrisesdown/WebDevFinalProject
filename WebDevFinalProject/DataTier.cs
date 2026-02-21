@@ -417,6 +417,40 @@ namespace WebDevFinalProject
             }
         }
 
+        
+        public DataSet searchRefillRX(string id)
+        {
+            try
+            {
+                // open connection
+                myConn.Open();
+                //clear any parameters
+                cmdString.Parameters.Clear();
+                // command
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "searchRefillRX";
+
+                cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = id;
+                // adapter and dataset
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+                DataSet aDataSet = new DataSet();
+
+                aAdapter.Fill(aDataSet);
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         public DataSet searchRefill(Int32 id)
         {
             try
@@ -617,12 +651,12 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "addRefill";
+                cmdString.CommandText = "add_refill";
 
                 // Define input parameter
                 cmdString.Parameters.Add("@REFILL_ID", SqlDbType.Int).Value = refillID;
                 cmdString.Parameters.Add("@RX_NUMBER", SqlDbType.VarChar, 6).Value = rxNumber;
-                cmdString.Parameters.Add("@DATEFILL", SqlDbType.Date).Value = filled;
+                cmdString.Parameters.Add("@DATE_FILLED", SqlDbType.Date).Value = filled;
 
                 //execute statement
                 cmdString.ExecuteNonQuery();

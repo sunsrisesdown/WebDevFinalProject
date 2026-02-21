@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,22 +19,47 @@ namespace WebDevFinalProject
         {
             try
             {
-                string rxNumber = TxtBoxNumber.Text/*, date = dtpDate.Value.ToString("yyyy-MM-dd")*/;
+                string rxNumber = TxtBoxNumber.Text;
                 Int32 refillID = Int32.Parse(TxtBoxID.Text.Trim());
 
                 if (refillID > 0)
                 {
                     try
                     {
-                        DateTime date = DateTime.Parse(TxtRefillDate.Text.Trim());
+                        string date = DateTime.Parse(TxtRefillDate.Text.Trim()).ToString("yyyy-MM-dd");
 
                         try
                         {
                             DataTier dt = new DataTier();
-                            dt.AddRefill(refillID, rxNumber, date.ToString("yyyy-MM-dd"));
 
-                            Response.Write("<script>alert('Error: The refill has been created!');</script>");
-                            BtnClear_Click(sender, e);
+                            DataSet aDataSet1 = new DataSet();
+                            aDataSet1 = dt.searchPrescription(rxNumber,"","");
+                            Int32 rx_Max = Int32.Parse(aDataSet1.Tables[0].Rows[0]["refill_allowed_count"].ToString());
+
+                            DataSet dataSet2 = new DataSet();
+                            dataSet2 = dt.searchRefillRX(rxNumber);
+                            Int32 count = dataSet2.Tables[0].Rows.Count;
+
+                            if (count < rx_Max)
+                            {
+                                try
+                                {
+                                    dt.AddRefill(refillID, rxNumber, date);
+
+                                    Response.Write("<script>alert('The refill has been created!');</script>");
+                                    BtnClear_Click(sender, e);
+                                }
+                                catch
+                                {
+                                    Response.Write("<script>alert('Error: SQL failure!');</script>");
+                                    TxtBoxID.Focus();
+                                }
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Error: Too many refill records for the prescription!');</script>");
+                                TxtBoxID.Focus();
+                            }
                         }
                         catch
                         {
@@ -63,7 +89,9 @@ namespace WebDevFinalProject
 
         protected void BtnClear_Click(object sender, EventArgs e)
         {
-
+            TxtBoxID.Text = string.Empty;
+            TxtBoxNumber.Text = string.Empty;
+            TxtRefillDate.Text  = string.Empty;
         }
     }
 }
