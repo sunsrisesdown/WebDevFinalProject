@@ -28,7 +28,7 @@ namespace WebDevFinalProject
                 {
                     try
                     {
-                        GetPrescription(Request.QueryString["ID"].Trim());
+                        GetPrescription(DecryptID(Request.QueryString["ID"]));
                     }
                     catch 
                     {
@@ -42,6 +42,14 @@ namespace WebDevFinalProject
                 }
             }
         }
+
+        private string DecryptID(string encrypted)
+        {
+            byte[] protectedData = HttpServerUtility.UrlTokenDecode(encrypted);
+            byte[] data = System.Web.Security.MachineKey.Unprotect(protectedData, "PrescriptionID");
+            return System.Text.Encoding.UTF8.GetString(data);
+        }
+
 
         public void GetPrescription(string rx_number)
         {

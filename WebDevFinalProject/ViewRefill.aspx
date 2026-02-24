@@ -75,9 +75,13 @@
                     <asp:BoundField DataField="date_filled" HeaderText="Date Filled" SortExpression="date_filled" />
 
 
-                     <asp:HyperLinkField DataNavigateUrlFields="RX_Number"
-                        DataNavigateUrlFormatString="~/DisplayPrescription.aspx?ID={0}&type=view"
-                        HeaderText="View" Text="View" Target="_blank" />
+                     <asp:TemplateField HeaderText="View">
+                        <ItemTemplate>
+                           <asp:HyperLink ID="lnkView" runat="server" Text="View" Target="_blank"></asp:HyperLink>
+                            <asp:Label ID="hidRefillID" runat="server" Text='<%# Eval("refill_id") %>' Visible="false"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
 
 
                     <asp:TemplateField HeaderText="Actions">

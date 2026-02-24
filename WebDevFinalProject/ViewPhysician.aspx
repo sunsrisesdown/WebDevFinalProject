@@ -85,9 +85,13 @@
                     <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
 
 
-                    <asp:HyperLinkField DataNavigateUrlFields="Physician_ID"
-                        DataNavigateUrlFormatString="~/DisplayPhysician.aspx?ID={0}&type=view"
-                        HeaderText="View" Text="View" Target="_blank" />
+                    <asp:TemplateField HeaderText="View">
+                        <ItemTemplate>
+                                <asp:HyperLink ID="lnkView" runat="server" Text="View" Target="_blank"></asp:HyperLink>
+                                <asp:Label ID="hidPhysicianID_View" runat="server" Text='<%# Eval("Physician_ID") %>' Visible="false"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>

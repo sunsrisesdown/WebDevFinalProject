@@ -82,9 +82,13 @@
                     <asp:BoundField DataField="prescription_dosage" HeaderText="Prescription Dosage" SortExpression="prescription_dosage" />
 
 
-                    <asp:HyperLinkField DataNavigateUrlFields="RX_Number"
-                        DataNavigateUrlFormatString="~/DisplayPrescription.aspx?ID={0}&type=view"
-                        HeaderText="View" Text="View" Target="_blank" />
+                    <asp:TemplateField HeaderText="View">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="lnkView" runat="server" Text="View" Target="_blank"></asp:HyperLink>
+                            <asp:Label ID="hidRX" runat="server" Text='<%# Eval("RX_Number") %>' Visible="false"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>

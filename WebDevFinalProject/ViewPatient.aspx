@@ -82,9 +82,13 @@
                     <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
                     <asp:BoundField DataField="cell_phone" HeaderText="Phone" SortExpression="cell_phone" />
 
-                    <asp:HyperLinkField DataNavigateUrlFields="Patient_ID"
-                        DataNavigateUrlFormatString="~/DisplayPatient.aspx?ID={0}&type=view"
-                        HeaderText="View" Text="View" Target="_blank" />
+                    <asp:TemplateField HeaderText="View">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="lnkView" runat="server" Text="View" Target="_blank"></asp:HyperLink>
+                            <asp:Label ID="hidPatientID_View" runat="server" Text='<%# Eval("Patient_ID") %>' Visible="false"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>

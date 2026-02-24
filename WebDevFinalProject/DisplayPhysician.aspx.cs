@@ -29,8 +29,8 @@ namespace WebDevFinalProject
                 else if (Request.QueryString["type"].Trim().ToUpper() == "VIEW") // display
                 {
                     try
-                    { 
-                    GetPhysician(Request.QueryString["ID"].Trim());
+                    {
+                        GetPhysician(DecryptID(Request.QueryString["ID"]));
                     }
                     catch 
                     {
@@ -44,6 +44,14 @@ namespace WebDevFinalProject
                 }
             }
         }
+
+        private string DecryptID(string encrypted)
+        {
+            byte[] protectedData = HttpServerUtility.UrlTokenDecode(encrypted);
+            byte[] data = System.Web.Security.MachineKey.Unprotect(protectedData, "PhysicianID");
+            return System.Text.Encoding.UTF8.GetString(data);
+        }
+
 
         public void GetPhysician(string phyID)
         {

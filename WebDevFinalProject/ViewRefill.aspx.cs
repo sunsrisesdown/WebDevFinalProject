@@ -38,6 +38,14 @@ namespace WebDevFinalProject
             }
         }
 
+        private string EncryptID(string plainID)
+        {
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(plainID);
+            byte[] protectedData = System.Web.Security.MachineKey.Protect(data, "RefillID");
+            return HttpServerUtility.UrlTokenEncode(protectedData);
+        }
+
+
         protected void grdRefills_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             Int32 pageNum = 0;
@@ -127,6 +135,19 @@ namespace WebDevFinalProject
             {
                 ((CheckBox)e.Row.FindControl("cbSelectAll")).Attributes.Add("onclick", "javascript:Select('" + ((CheckBox)e.Row.FindControl("cbSelectAll")).ClientID + "')");
             }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Label hid = (Label)e.Row.FindControl("hidRefillID");
+                HyperLink lnk = (HyperLink)e.Row.FindControl("lnkView");
+
+                if (hid != null && lnk != null)
+                {
+                    string encrypted = EncryptID(hid.Text.Trim());
+                    lnk.NavigateUrl = "~/DisplayRefill.aspx?ID=" + encrypted + "&type=view&page=" + grdRefills.PageIndex;
+                }
+            }
+
         }
 
         protected void Delete_Click(object sender, CommandEventArgs e)

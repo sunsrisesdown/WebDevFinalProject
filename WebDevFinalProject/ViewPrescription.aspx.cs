@@ -39,6 +39,13 @@ namespace WebDevFinalProject
             }
         }
 
+        private string EncryptID(string plainID)
+        {
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(plainID);
+            byte[] protectedData = System.Web.Security.MachineKey.Protect(data, "PrescriptionID");
+            return HttpServerUtility.UrlTokenEncode(protectedData);
+        }
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             btnSearch.Enabled = false;
@@ -201,6 +208,19 @@ namespace WebDevFinalProject
             {
                 ((CheckBox)e.Row.FindControl("cbSelectAll")).Attributes.Add("onclick", "javascript:Select('" + ((CheckBox)e.Row.FindControl("cbSelectAll")).ClientID + "')");
             }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Label hid = (Label)e.Row.FindControl("hidRX");
+                HyperLink lnk = (HyperLink)e.Row.FindControl("lnkView");
+
+                if (hid != null && lnk != null)
+                {
+                    string encrypted = EncryptID(hid.Text.Trim());
+                    lnk.NavigateUrl = "~/DisplayPrescription.aspx?ID=" + encrypted + "&type=view";
+                }
+            }
+
         }
 
         protected void Delete_Click(object sender, CommandEventArgs e)
