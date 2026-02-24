@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XYZ INC</title>
-    <link href="~/images/main.jpeg" type="image/x-icon" rel ="icon" />
+    <link href="~/images/main.jpeg" type="image/x-icon" rel="icon" />
     <link href="~/bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/MainStyleSheet.css" rel="stylesheet" />
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
@@ -56,17 +56,15 @@
                 </asp:HyperLink>
             </li>
 
+            <!-- Prescription Dropdown -->
             <li class="sidebar-item">
-                <asp:HyperLink 
-                    NavigateUrl="#" 
-                    CssClass="sidebar-link has-dropdown collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#prescriptionMenu"
-                    aria-expanded="false"
-                    runat="server">
+                <a href="#prescriptionMenu"
+                   class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   aria-expanded="false">
                     <i class="lni lni-file-multiple"></i>
                     <span>Prescription</span>
-                </asp:HyperLink>
+                </a>
 
                 <ul id="prescriptionMenu"
                     class="sidebar-dropdown list-unstyled collapse">
@@ -89,17 +87,15 @@
                 </ul>
             </li>
 
+            <!-- Refill Dropdown -->
             <li class="sidebar-item">
-                <asp:HyperLink 
-                    NavigateUrl="#" 
-                    CssClass="sidebar-link has-dropdown collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#refillMenu"
-                    aria-expanded="false"
-                    runat="server">
+                <a href="#refillMenu"
+                   class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   aria-expanded="false">
                     <i class="lni lni-cloud-refresh-clockwise"></i>
                     <span>Refill</span>
-                </asp:HyperLink>
+                </a>
 
                 <ul id="refillMenu"
                     class="sidebar-dropdown list-unstyled collapse">
@@ -122,17 +118,15 @@
                 </ul>
             </li>
 
+            <!-- View Dropdown -->
             <li class="sidebar-item">
-                <asp:HyperLink 
-                    NavigateUrl="#" 
-                    CssClass="sidebar-link has-dropdown collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#ViewMenu"
-                    aria-expanded="false"
-                    runat="server">
+                <a href="#ViewMenu"
+                   class="sidebar-link has-dropdown collapsed"
+                   data-bs-toggle="collapse"
+                   aria-expanded="false">
                     <i class="lni lni-monitor"></i>
                     <span>View</span>
-                </asp:HyperLink>
+                </a>
 
                 <ul id="ViewMenu"
                     class="sidebar-dropdown list-unstyled collapse">
@@ -170,6 +164,7 @@
                     </li>
                 </ul>
             </li>
+
         </ul>
     </aside>
 
@@ -181,7 +176,7 @@
 
 </form>
 
-<script src="~/bootstrap/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/MainScript.js"></script>
+<script src="<%= ResolveUrl("~/bootstrap/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js") %>"></script>
+<script src="<%= ResolveUrl("~/MainScript.js") %>"></script>
 </body>
 </html>
