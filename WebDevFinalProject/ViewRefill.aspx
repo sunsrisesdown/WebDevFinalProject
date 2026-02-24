@@ -76,8 +76,6 @@
                     <asp:BoundField DataField="date_filled" HeaderText="Date Filled" SortExpression="date_filled" />
 
 
-                    <asp:HyperLinkField DataNavigateUrlFields="refill_id"
-                        DataNavigateUrlFormatString="~/displayRefill.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
 
                     <asp:TemplateField HeaderText="Actions">
