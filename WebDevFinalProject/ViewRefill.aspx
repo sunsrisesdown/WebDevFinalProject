@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="ViewRefill.aspx.cs" Inherits="WebDevFinalProject.ViewRefill" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/ImportedFiles/main.css") %>" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
@@ -38,7 +38,7 @@
                     <div class="row g-2">
                         <div class="col-md-3">
                             <label class="form-label">Refill ID</label>
-                            <asp:TextBox ID="txtrefill_ID" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
+                            <asp:TextBox ID="txtrefill_ID" runat="server" CssClass="form-control" MaxLength="9"></asp:TextBox>
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">RX Number</label>
@@ -71,12 +71,14 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <%-- start to fix --%>
                     <asp:BoundField DataField="rx_number" HeaderText="RX Number" SortExpression="rx_number" />
                     <asp:BoundField DataField="date_filled" HeaderText="Date Filled" SortExpression="date_filled" />
 
 
+                     <asp:HyperLinkField DataNavigateUrlFields="RX_Number"
+                        DataNavigateUrlFormatString="~/DisplayPrescription.aspx?ID={0}&type=view"
                         HeaderText="View" Text="View" Target="_blank" />
+
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>

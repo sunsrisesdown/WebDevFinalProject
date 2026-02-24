@@ -73,6 +73,7 @@
     <Content Include="DisplayPatient.aspx" />
     <Content Include="DisplayPhysician.aspx" />
     <Content Include="DisplayPrescription.aspx" />
+    <Content Include="displayRefill.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\Add Prescription.jpg" />
     <Content Include="images\delete.jpg" />
@@ -83,8 +84,9 @@
     <Content Include="images\Physician.jpg" />
     <Content Include="images\prescription_refills.jpg" />
     <Content Include="images\View Patient.jpg" />
-    <Content Include="images\View Physician.jpg" />
-    <Content Include="images\ViewRecords.jpg" />
+    <Content Include="images\viewPhysician.jpg" />
+    <Content Include="images\ViewPrescrption.jpg" />
+    <Content Include="images\ViewRefill.jpg" />
     <Content Include="ImportedFiles\main.css" />
     <Content Include="AddPatient.aspx" />
     <Content Include="AddPhysician.aspx" />
@@ -160,6 +162,13 @@
     </Compile>
     <Compile Include="DisplayPrescription.aspx.designer.cs">
       <DependentUpon>DisplayPrescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="displayRefill.aspx.cs">
+      <DependentUpon>displayRefill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="displayRefill.aspx.designer.cs">
+      <DependentUpon>displayRefill.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

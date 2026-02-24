@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XYZ INC</title>
     <link href="~/images/main.jpeg" rel="icon" type="image/x-icon" />
-
     <link href="~/bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/MainStyleSheet.css" rel="stylesheet" />
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
-
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
@@ -30,104 +28,145 @@
             </button>
 
             <div class="sidebar-logo">
-                <a href="Default.aspx"><h3>XYZ CLINIC</h3></a>
+                <asp:HyperLink NavigateUrl="Default.aspx" runat="server">
+                    <h3>XYZ CLINIC</h3>
+                </asp:HyperLink>
             </div>
         </div>
 
         <ul class="sidebar-nav">
 
             <li class="sidebar-item">
-                <a href="<%: ResolveUrl("~/AddPatient.aspx") %>" class="sidebar-link">
+                <asp:HyperLink 
+                    NavigateUrl="~/AddPatient.aspx" 
+                    CssClass="sidebar-link" 
+                    runat="server">
                     <i class="lni lni-user-4"></i>
-                    <span>Patient</span>
-                </a>
+                    <span>Add Patient</span>
+                </asp:HyperLink>
             </li>
 
             <li class="sidebar-item">
-                <a href="<%: ResolveUrl("~/AddPhysician.aspx") %>" class="sidebar-link">
+                <asp:HyperLink 
+                    NavigateUrl="~/AddPhysician.aspx" 
+                    CssClass="sidebar-link" 
+                    runat="server">
                     <i class="lni lni-stethoscope-1"></i>
-                    <span>Physician</span>
-                </a>
+                    <span>Add Physician</span>
+                </asp:HyperLink>
             </li>
 
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link has-dropdown collapsed"
-                   data-bs-toggle="collapse"
-                   data-bs-target="#prescriptionMenu"
-                   aria-expanded="false">
+                <asp:HyperLink 
+                    NavigateUrl="#" 
+                    CssClass="sidebar-link has-dropdown collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#prescriptionMenu"
+                    aria-expanded="false"
+                    runat="server">
                     <i class="lni lni-file-multiple"></i>
                     <span>Prescription</span>
-                </a>
+                </asp:HyperLink>
 
                 <ul id="prescriptionMenu"
                     class="sidebar-dropdown list-unstyled collapse">
                     <li>
-                        <a href="<%: ResolveUrl("~/AddPrescription.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/AddPrescription.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             Add Prescription
-                        </a>
+                        </asp:HyperLink>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/ModifyPrescription.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ModifyPrescription.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             Modify Prescription
-                        </a>
+                        </asp:HyperLink>
                     </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link has-dropdown collapsed"
-                   data-bs-toggle="collapse"
-                   data-bs-target="#refillMenu"
-                   aria-expanded="false">
+                <asp:HyperLink 
+                    NavigateUrl="#" 
+                    CssClass="sidebar-link has-dropdown collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#refillMenu"
+                    aria-expanded="false"
+                    runat="server">
                     <i class="lni lni-cloud-refresh-clockwise"></i>
                     <span>Refill</span>
-                </a>
+                </asp:HyperLink>
 
                 <ul id="refillMenu"
                     class="sidebar-dropdown list-unstyled collapse">
                     <li>
-                        <a href="<%: ResolveUrl("~/AddRefill.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/AddRefill.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             Add Refill
-                        </a>
+                        </asp:HyperLink>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/ModifyRefill.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ModifyRefill.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             Modify Refill
-                        </a>
+                        </asp:HyperLink>
                     </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link has-dropdown collapsed"
-                   data-bs-toggle="collapse"
-                   data-bs-target="#ViewMenu"
-                   aria-expanded="false">
+                <asp:HyperLink 
+                    NavigateUrl="#" 
+                    CssClass="sidebar-link has-dropdown collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#ViewMenu"
+                    aria-expanded="false"
+                    runat="server">
                     <i class="lni lni-monitor"></i>
                     <span>View</span>
-                </a>
+                </asp:HyperLink>
 
                 <ul id="ViewMenu"
                     class="sidebar-dropdown list-unstyled collapse">
                     <li>
-                        <a href="<%: ResolveUrl("~/ViewPatient.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ViewPatient.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             View Patient
-                        </a>
+                        </asp:HyperLink>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/ViewPhysician.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ViewPhysician.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             View Physician
-                        </a>
+                        </asp:HyperLink>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/ViewPrescription.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ViewPrescription.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             View Prescription
-                        </a>
+                        </asp:HyperLink>
                     </li>
                     <li>
-                        <a href="<%: ResolveUrl("~/ViewRefill.aspx") %>" class="sidebar-link">
+                        <asp:HyperLink 
+                            NavigateUrl="~/ViewRefill.aspx" 
+                            CssClass="sidebar-link" 
+                            runat="server">
                             View Refill(s)
-                        </a>
+                        </asp:HyperLink>
                     </li>
                 </ul>
             </li>
@@ -143,6 +182,6 @@
 </form>
 
 <script src="bootstrap/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="MainScript.js"></script>
+<script src="~/MainScript.js"></script>
 </body>
 </html>

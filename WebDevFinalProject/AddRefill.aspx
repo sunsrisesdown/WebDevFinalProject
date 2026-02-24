@@ -10,14 +10,14 @@
 
 <div class="container-fluid mt-2">
 
-    <div class="form-header">Add Refill</div>
+    <div class="form-header">Add New Refill</div>
 
     <div class="card shadow-sm p-4">
 
         <div class="form-group">
             <label class="form-label">RX Number:</label>
             <asp:TextBox ID="TxtBoxNumber" runat="server" CssClass="form-control"
-                ToolTip="Enter the prescription RX number" />
+                ToolTip="Enter the prescription RX number" MaxLength="6" />
             <asp:RequiredFieldValidator ID="RFV1" runat="server"
                 ControlToValidate="TxtBoxNumber"
                 ErrorMessage="You need an RX Number"
@@ -29,7 +29,7 @@
         <div class="form-group">
             <label class="form-label">Refill ID:</label>
             <asp:TextBox ID="TxtBoxID" runat="server" CssClass="form-control"
-                ToolTip="Enter the refill ID" />
+                ToolTip="Enter the refill ID" MaxLength="9" >9</asp:TextBox>
             <asp:RequiredFieldValidator ID="RFV2" runat="server"
                 ControlToValidate="TxtBoxID"
                 ErrorMessage="You need a Refill ID"
@@ -41,7 +41,7 @@
         <div class="form-group">
             <label class="form-label">Refill Date:</label>
             <asp:TextBox ID="TxtRefillDate" runat="server" CssClass="form-control"
-                ToolTip="Select the date this refill was filled (optional)" />
+                ToolTip="Select the date this refill was filled (optional)" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
                 TargetControlID="TxtRefillDate"
                 Format="MM/dd/yyyy" />

@@ -683,7 +683,7 @@ namespace WebDevFinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "updatePrescriptionImp";
+                cmdString.CommandText = "updatePrescriptionimp";
 
                 // Define input parameter
                 cmdString.Parameters.Add("@rx_number", SqlDbType.VarChar, 6).Value = rx;

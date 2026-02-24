@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace WebDevFinalProject
 {
-    public partial class DisplayPrescription : System.Web.UI.Page
+    public partial class displayRefill : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,9 +30,9 @@ namespace WebDevFinalProject
                 {
                     try
                     {
-                        GetPrescription(Request.QueryString["ID"].Trim());
+                        GetRefill(Int32.Parse(Request.QueryString["ID"].Trim()));
                     }
-                    catch 
+                    catch
                     {
                         Response.Write("<script>alert('Error: SQL failure!');</script>");
                         btnClose_Click(sender, e);
@@ -43,40 +45,26 @@ namespace WebDevFinalProject
             }
         }
 
-        public void GetPrescription(string rx_number)
+        public void GetRefill(Int32 myID)
         {
             //   the right record
-            DataTier stuDT = new DataTier();
+            DataTier DT = new DataTier();
             DataSet ds = new DataSet();
             string gender;
-            string myID = "";
 
             // string myCol = Crypt.DecryptString(studentid, "HelloWorld!");
 
-            ds = stuDT.searchPrescription(rx_number, "","");
+            ds = DT.searchRefill(myID,"");
             if (ds.Tables[0].Rows.Count > 0)
             {
+                txtID.Text = ds.Tables[0].Rows[0]["refill_id"].ToString();
                 txtRX.Text = ds.Tables[0].Rows[0]["rx_number"].ToString();
-                txtAMT.Text = ds.Tables[0].Rows[0]["presciption_amt"].ToString();
-                txtSTART.Text = ds.Tables[0].Rows[0]["prescription_start_date"].ToString();
-                txtEND.Text = ds.Tables[0].Rows[0]["prescription_end_date"].ToString();
-                txtCOUNT.Text = ds.Tables[0].Rows[0]["refill_allowed_count"].ToString();
-                txtPAT.Text = ds.Tables[0].Rows[0]["patient_id"].ToString();
-                txtPHY.Text = ds.Tables[0].Rows[0]["physician_id"].ToString();
-                txtNAME.Text = ds.Tables[0].Rows[0]["medication_name"].ToString();
-                txtDOSAGE.Text = ds.Tables[0].Rows[0]["prescription_dosage"].ToString();
-                txtINFO.Text = ds.Tables[0].Rows[0]["prescription_info"].ToString();
+                txtDate.Text = ds.Tables[0].Rows[0]["date_filled"].ToString();
+
                 // TODO complete other fields
                 txtRX.Enabled = false;
-                txtAMT.Enabled = false;
-                txtSTART.Enabled = false;
-                txtEND.Enabled = false;
-                txtCOUNT.Enabled = false;
-                txtPAT.Enabled = false;
-                txtPHY.Enabled = false;
-                txtNAME.Enabled = false;
-                txtDOSAGE.Enabled = false;
-                txtINFO.Enabled = false;
+                txtID.Enabled = false;
+                txtDate.Enabled = false;
             }
         }
 

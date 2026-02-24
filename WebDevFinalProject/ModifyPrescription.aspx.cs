@@ -106,6 +106,8 @@ namespace WebDevFinalProject
             txtMedication.Text = string.Empty;
             txtDosage.Text = string.Empty;
             txtPrescritpionInfo.Text = string.Empty;
+            btnSearch.Enabled = true;
+            txtRxNumber.Enabled = true;
         }
 
         public void btnSearch_Click(object sender, EventArgs e)
@@ -128,6 +130,8 @@ namespace WebDevFinalProject
                 txtMedication.Text = ds.Tables[0].Rows[0]["medication_name"].ToString();
                 txtDosage.Text = ds.Tables[0].Rows[0]["prescription_dosage"].ToString();
                 txtPrescritpionInfo.Text = ds.Tables[0].Rows[0]["prescription_info"].ToString();
+                btnSearch.Enabled = false; 
+                txtRxNumber.Enabled = false;
 
             }
             catch

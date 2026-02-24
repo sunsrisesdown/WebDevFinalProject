@@ -18,7 +18,7 @@
             <label class="form-label">RX #:</label>
             <div class="input-group">
                 <asp:TextBox ID="txtRxNumber" runat="server" CssClass="form-control"
-                    ToolTip="Enter the prescription number (RX#)" />
+                    ToolTip="Enter the prescription number (RX#)" MaxLength="6" />
                 <asp:Button ID="btnSearch" runat="server" Text="Search"
                     CssClass="btn btn-info ml-2"
                     ToolTip="Search for this prescription"
@@ -29,13 +29,13 @@
         <div class="form-group">
             <label class="form-label">Patient ID:</label>
             <asp:TextBox ID="txtPatientId" runat="server" CssClass="form-control"
-                ToolTip="Enter the patient’s ID" />
+                ToolTip="Enter the patient’s ID" MaxLength="6" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Physician ID:</label>
             <asp:TextBox ID="txtPhysicianId" runat="server" CssClass="form-control"
-                ToolTip="Enter the physician’s ID" />
+                ToolTip="Enter the physician’s ID" MaxLength="6" />
         </div>
 
         <hr />
@@ -43,13 +43,13 @@
         <div class="form-group">
             <label class="form-label">Prescription Amount:</label>
             <asp:TextBox ID="txtPrescriptionAmt" runat="server" CssClass="form-control"
-                ToolTip="Enter the amount prescribed (optional)" />
+                ToolTip="Enter the amount prescribed (optional)" MaxLength="6" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Refill Count:</label>
             <asp:TextBox ID="txtRefillCount" runat="server" CssClass="form-control"
-                ToolTip="Enter how many refills are allowed (optional)" />
+                ToolTip="Enter how many refills are allowed (optional)" MaxLength="9" />
         </div>
 
         <hr />
@@ -57,7 +57,7 @@
         <div class="form-group">
             <label class="form-label">Prescription Start Date:</label>
             <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control"
-                ToolTip="Select the prescription start date" />
+                ToolTip="Select the prescription start date" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="CalendarExtenderStart" runat="server"
                 TargetControlID="txtStartDate"
                 Format="MM/dd/yyyy" />
@@ -66,7 +66,7 @@
         <div class="form-group">
             <label class="form-label">Prescription End Date:</label>
             <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control"
-                ToolTip="Select the prescription end date" />
+                ToolTip="Select the prescription end date" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="CalendarExtenderEnd" runat="server"
                 TargetControlID="txtEndDate"
                 Format="MM/dd/yyyy" />
@@ -77,19 +77,19 @@
         <div class="form-group">
             <label class="form-label">Medication Name:</label>
             <asp:TextBox ID="txtMedication" runat="server" CssClass="form-control"
-                ToolTip="Enter the medication name" />
+                ToolTip="Enter the medication name" MaxLength="25" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Dosage:</label>
             <asp:TextBox ID="txtDosage" runat="server" CssClass="form-control"
-                ToolTip="Enter the dosage" />
+                ToolTip="Enter the dosage" MaxLength="25" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Prescription Info:</label>
             <asp:TextBox ID="txtPrescritpionInfo" runat="server" CssClass="form-control"
-                ToolTip="Additional notes or instructions (optional)" />
+                ToolTip="Additional notes or instructions (optional)" MaxLength="50" />
         </div>
 
         <div class="text-right mt-3">

@@ -57,7 +57,7 @@ namespace WebDevFinalProject
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message, ex.InnerException);
+                        Response.Write("<script>alert('Error: SQL Search failure!');</script>");
                     }
                 }
                 else
@@ -67,7 +67,7 @@ namespace WebDevFinalProject
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message, ex.InnerException);
+                Response.Write("<script>alert('Error: SQL failure!');</script>");
             }
             btnSearch.Enabled = true;
         }

@@ -19,7 +19,7 @@
 
             <div class="input-group">
                 <asp:TextBox ID="TxtBoxID" runat="server" CssClass="form-control"
-                    ToolTip="Enter the refill ID to search" />
+                    ToolTip="Enter the refill ID to search" MaxLength="9" />
                 <asp:Button ID="BtnSearch" runat="server" Text="Search"
                     CssClass="btn btn-info ml-2"
                     ToolTip="Search for this refill"
@@ -37,7 +37,7 @@
         <div class="form-group">
             <label class="form-label">RX Number:</label>
             <asp:TextBox ID="TxtBoxNumber" runat="server" CssClass="form-control"
-                ToolTip="Enter the RX number for this refill" />
+                ToolTip="Enter the RX number for this refill" MaxLength="6" />
         </div>
 
         <hr />
@@ -45,7 +45,7 @@
         <div class="form-group">
             <label class="form-label">Refill Date:</label>
             <asp:TextBox ID="TxtRefillDate" runat="server" CssClass="form-control"
-                ToolTip="Select the refill date (optional)" />
+                ToolTip="Select the refill date (optional)" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
                 TargetControlID="TxtRefillDate"
                 Format="MM/dd/yyyy" />

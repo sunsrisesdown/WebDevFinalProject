@@ -17,7 +17,7 @@
         <div class="form-group">
             <label class="form-label">Patient ID:</label>
             <asp:TextBox ID="txtPatient" runat="server" CssClass="form-control"
-                ToolTip="Enter the patient ID" />
+                ToolTip="Enter the patient ID" MaxLength="6" />
             <asp:RequiredFieldValidator ID="rfvPatient" runat="server"
                 ControlToValidate="txtPatient" ErrorMessage="* Required" CssClass="error" />
         </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
             <label class="form-label">First Name:</label>
             <asp:TextBox ID="txtFirst" runat="server" CssClass="form-control"
-                ToolTip="Enter the patient's first name" />
+                ToolTip="Enter the patient's first name" MaxLength="25" />
             <asp:RequiredFieldValidator ID="rfvFirst" runat="server"
                 ControlToValidate="txtFirst" ErrorMessage="* Required" CssClass="error" />
         </div>
@@ -39,7 +39,7 @@
         <div class="form-group">
             <label class="form-label">Last Name:</label>
             <asp:TextBox ID="txtLast" runat="server" CssClass="form-control"
-                ToolTip="Enter the patient's last name" />
+                ToolTip="Enter the patient's last name" MaxLength="25" />
             <asp:RequiredFieldValidator ID="rfvLast" runat="server"
                 ControlToValidate="txtLast" ErrorMessage="* Required" CssClass="error" />
         </div>
@@ -47,7 +47,7 @@
         <div class="form-group">
             <label class="form-label">Date of Birth:</label>
             <asp:TextBox ID="txtDOB" runat="server" CssClass="form-control"
-                ToolTip="Select the patient's date of birth" />
+                ToolTip="Select the patient's date of birth" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="DOB_Calendar" runat="server"
                 TargetControlID="txtDOB"
                 Format="MM/dd/yyyy" />
@@ -69,7 +69,7 @@
         <div class="form-group">
             <label class="form-label">Account Balance:</label>
             <asp:TextBox ID="txtAcct" runat="server" CssClass="form-control"
-                ToolTip="Enter the patient's account balance" />
+                ToolTip="Enter the patient's account balance" MaxLength="7" />
             <asp:RequiredFieldValidator ID="rfvAcct" runat="server"
                 ControlToValidate="txtAcct" ErrorMessage="* Required" CssClass="error" />
         </div>
@@ -79,13 +79,13 @@
         <div class="form-group">
             <label class="form-label">Street:</label>
             <asp:TextBox ID="txtStreet" runat="server" CssClass="form-control"
-                ToolTip="Enter the street address (optional)" />
+                ToolTip="Enter the street address (optional)" MaxLength="60" />
         </div>
 
         <div class="form-group">
             <label class="form-label">City:</label>
             <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"
-                ToolTip="Enter the city (optional)" />
+                ToolTip="Enter the city (optional)" MaxLength="60" />
         </div>
 
         <div class="form-group">
@@ -106,38 +106,38 @@
         <div class="form-group">
             <label class="form-label">Home Phone:</label>
             <asp:TextBox ID="txtHome" runat="server" CssClass="form-control"
-                ToolTip="Enter the home phone number (optional)" />
+                ToolTip="Enter the home phone number (optional)" MaxLength="15" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Cell Phone:</label>
             <asp:TextBox ID="txtCell" runat="server" CssClass="form-control"
-                ToolTip="Enter the cell phone number (optional)" />
+                ToolTip="Enter the cell phone number (optional)" MaxLength="15" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Work Phone:</label>
             <asp:TextBox ID="txtWorkP" runat="server" CssClass="form-control"
-                ToolTip="Enter the work phone number (optional)" />
+                ToolTip="Enter the work phone number (optional)" MaxLength="15" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Work Email:</label>
             <asp:TextBox ID="txtWorkE" runat="server" CssClass="form-control"
-                ToolTip="Enter the work email (optional)" />
+                ToolTip="Enter the work email (optional)" MaxLength="60" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Personal Email:</label>
             <asp:TextBox ID="txtPersE" runat="server" CssClass="form-control"
-                ToolTip="Enter the personal email (optional)" />
+                ToolTip="Enter the personal email (optional)" MaxLength="60" />
         </div>
 
         <hr />
 
         <div class="text-right mt-3">
             <asp:Button ID="btnAdd" runat="server" Text="Add Patient" CssClass="btn btn-primary"
-                ToolTip="Click to add this patient" OnClick="btnAdd_Click" />
+                ToolTip="Click to add this patient" OnClick="btnAdd_Click" Width="144px" />
             <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-secondary ml-2"
                 ToolTip="Clear all fields" OnClick="btnClear_Click" />
         </div>

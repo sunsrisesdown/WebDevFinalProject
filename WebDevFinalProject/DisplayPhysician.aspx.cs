@@ -24,15 +24,23 @@ namespace WebDevFinalProject
                 if (String.IsNullOrEmpty(Request.QueryString["ID"]))
                 {
                     //not the right entry point
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect("Default.aspx");
                 }
                 else if (Request.QueryString["type"].Trim().ToUpper() == "VIEW") // display
                 {
+                    try
+                    { 
                     GetPhysician(Request.QueryString["ID"].Trim());
+                    }
+                    catch 
+                    {
+                        Response.Write("<script>alert('Error: SQL failure!');</script>");
+                        btnClose_Click(sender, e);
+                    }
                 }
                 else  //    anything else
                 {
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect("Default.aspx");
                 }
             }
         }

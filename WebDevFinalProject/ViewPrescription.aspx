@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main1.Master" AutoEventWireup="true" CodeBehind="ViewPrescription.aspx.cs" Inherits="WebDevFinalProject.ViewPrescription" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/ImportedFiles/main.css") %>" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
@@ -42,11 +42,11 @@
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Physician ID</label>
-                            <asp:TextBox ID="txtPHYID" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPHYID" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Patient ID</label>
-                            <asp:TextBox ID="txtPATID" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPATID" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
                         </div>
                         <div class="col-md-3 d-flex align-items-end">
                             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />

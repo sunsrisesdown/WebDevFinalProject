@@ -191,8 +191,7 @@ li {
     padding: 10px 22px;
     font-weight: 600;
     border-radius: 6px;
-    width: 104px;
-}
+    }
 
     .btn-primary:hover {
         background-color: #316ac7;

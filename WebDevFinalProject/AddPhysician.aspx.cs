@@ -57,8 +57,9 @@ namespace WebDevFinalProject
 
                                                     // Call your DataTier class
                                                     DataTier pdt = new DataTier();
-
-                                                    pdt.AddPhysician(
+                                                    try
+                                                    {
+                                                        pdt.AddPhysician(
                                                         physicianID,
                                                         firstName,
                                                         middleInitial,
@@ -80,10 +81,16 @@ namespace WebDevFinalProject
                                                         workEmail,
                                                         personal
                                                     );
-
-                                                    // Success message
+                                                    
                                                     Response.Write("<script>alert('Physician Added Successfully');</script>");
                                                     btnClear_Click(sender, e);
+
+                                                    }
+                                                    catch
+                                                    {
+                                                        Response.Write("<script>alert('Error: Either a physician with that id exist or SQL failure!');</script>");
+                                                        btnAdd.Focus();
+                                                    }
                                                 }
                                                 else
                                                 {
