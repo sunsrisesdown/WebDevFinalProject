@@ -5,7 +5,7 @@
 <head runat="server">
     <title>Simple Form</title>
 
-    <link href='<%= ResolveUrl("~/ImportedFiles/main.css") %>' rel="stylesheet" />
+    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
 
     <style>
         .popup-wrapper {

@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Display Prescription</title>
 
-    <link href="<%= ResolveUrl("~/ImportedFiles/main.css") %>" rel="stylesheet" />
+    <link href="~/ImportedFiles/main.css" rel="stylesheet" />
 
 
     <style>

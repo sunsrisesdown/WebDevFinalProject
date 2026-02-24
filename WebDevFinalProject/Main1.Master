@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>XYZ INC</title>
-    <link href="<%= ResolveUrl("~/images/main.jpeg")%>" type="image/x-icon" rel ="icon" />
-    <link href="<%= ResolveUrl("~/bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css")%>" rel="stylesheet" />
-    <link href="<%= ResolveUrl("~/MainStyleSheet.css")%>" rel="stylesheet" />
+    <link href="~/images/main.jpeg" type="image/x-icon" rel ="icon" />
+    <link href="~/bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/MainStyleSheet.css" rel="stylesheet" />
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
