@@ -221,6 +221,25 @@ namespace WebDevFinalProject
                 }
             }
 
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Label hid = (Label)e.Row.FindControl("hidRX");
+                HyperLink lnk = (HyperLink)e.Row.FindControl("lnkView");
+                LinkButton editBtn = (LinkButton)e.Row.FindControl("lbtnEdit");
+
+                if (hid != null)
+                {
+                    string encrypted = EncryptID(hid.Text.Trim());
+
+                    if (lnk != null)
+                        lnk.NavigateUrl = "~/DisplayPrescription.aspx?ID=" + encrypted + "&type=view";
+
+                    if (editBtn != null)
+                        editBtn.PostBackUrl = "~/ModifyPrescription.aspx?ID=" + encrypted + "&type=edit";
+                }
+            }
+
+
         }
 
         protected void Delete_Click(object sender, CommandEventArgs e)

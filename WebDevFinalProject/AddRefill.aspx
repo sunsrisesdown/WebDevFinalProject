@@ -29,7 +29,7 @@
         <div class="form-group">
             <label class="form-label">Refill ID:</label>
             <asp:TextBox ID="TxtBoxID" runat="server" CssClass="form-control"
-                ToolTip="Enter the refill ID" MaxLength="9" >9</asp:TextBox>
+                ToolTip="Enter the refill ID" MaxLength="9" ></asp:TextBox>
             <asp:RequiredFieldValidator ID="RFV2" runat="server"
                 ControlToValidate="TxtBoxID"
                 ErrorMessage="You need a Refill ID"

@@ -14,8 +14,34 @@ namespace WebDevFinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                //add a page closing event
 
+                Page.ClientScript.RegisterClientScriptInclude("Test", "MyScript.js");
+
+                if (Request.QueryString["type"] != null && Request.QueryString["type"].Trim().ToUpper() == "EDIT") // display
+                {
+                    try
+                    {
+                        txtRxNumber.Text = DecryptID(Request.QueryString["ID"]);
+                        btnSearch.Focus();
+                    }
+                    catch
+                    {
+                        Response.Write("<script>alert('Error: ID failure!');</script>");
+                    }
+                }
+            }
         }
+
+        private string DecryptID(string encrypted)
+        {
+            byte[] protectedData = HttpServerUtility.UrlTokenDecode(encrypted);
+            byte[] data = System.Web.Security.MachineKey.Unprotect(protectedData, "PrescriptionID");
+            return System.Text.Encoding.UTF8.GetString(data);
+        }
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
