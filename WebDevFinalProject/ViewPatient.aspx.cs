@@ -63,7 +63,7 @@ namespace WebDevFinalProject.pages
                     }
                     catch (Exception ex)
                     {
-                        Response.Write("<script>alert('Error: SQL Searcb failure!');</script>");
+                        Response.Write("<script>alert('Error: SQL Search failure!');</script>");
                     }
                 }
                 else
@@ -93,7 +93,7 @@ namespace WebDevFinalProject.pages
             if ((myID.Length > 0) || (myFN.Length > 0) || (myLN.Length > 0))
             {
                 DataSet aDataSet = new DataSet();
-                aDataSet = aDataTier.searchPhysician(myID, myFN, myLN);
+                aDataSet = aDataTier.searchPatient(myID, myFN, myLN);
                 grdPatient.DataSource = aDataSet.Tables[0];
 
                 if (Cache["Patient_Data"] == null)
