@@ -51,7 +51,7 @@ namespace WebDevFinalProject
                                 }
                                 catch
                                 {
-                                    Response.Write("<script>alert('Error: SQL failure!');</script>");
+                                    Response.Write("<script>alert('Error: SQL failure or refill already exists!');</script>");
                                     TxtBoxID.Focus();
                                 }
                             }

@@ -21,63 +21,71 @@ namespace WebDevFinalProject
         {
             try
             {
-                string dob = DateTime.Parse(txtDOB.Text).ToString();
-
-                try
+                DateTime dob1 = DateTime.Parse(txtDOB.Text);
+                if (dob1 < DateTime.Today)
                 {
-                    decimal acctBal = decimal.Parse(txtAcct.Text.Trim());
-                    if (acctBal > 0)
+                    string dob = DateTime.Parse(txtDOB.Text).ToString();
+                    try
                     {
-                        string gender = cboGender.SelectedValue;
-                        if (cboGender.SelectedIndex != 0)
+                        decimal acctBal = decimal.Parse(txtAcct.Text.Trim());
+                        if (acctBal > 0)
                         {
-                            string patientID = txtPatient.Text.Trim();
-                            string fname = txtFirst.Text.Trim();
-                            string midInit = txtMiddle.Text.Trim();
-                            string lname = txtLast.Text.Trim();
-
-                            string addressOne = txtStreet.Text.Trim();
-                            string city = txtCity.Text.Trim();
-                            string state = cboState.SelectedValue;
-                            string zip = txtZip.Text.Trim();
-                            string homePhone = txtHome.Text.Trim();
-                            string workPhone = txtWorkP.Text.Trim();
-                            string cellPhone = txtCell.Text.Trim();
-                            string workEmail = txtWorkE.Text.Trim();
-                            string personalEmail = txtPersE.Text.Trim();
-
-                            try
+                            string gender = cboGender.SelectedValue;
+                            if (cboGender.SelectedIndex != 0)
                             {
-                                DataTier pdt = new DataTier();
-                                pdt.AddPatient(patientID, fname, midInit, lname, dob, gender,
-                                               acctBal, addressOne, city, state, zip,
-                                               homePhone, workPhone, cellPhone,
-                                               workEmail, personalEmail);
-                                Response.Write("<script>alert('New Patient Added Successfully');</script>");
-                                btnClear_Click(sender, e);
+                                string patientID = txtPatient.Text.Trim();
+                                string fname = txtFirst.Text.Trim();
+                                string midInit = txtMiddle.Text.Trim();
+                                string lname = txtLast.Text.Trim();
+
+                                string addressOne = txtStreet.Text.Trim();
+                                string city = txtCity.Text.Trim();
+                                string state = cboState.SelectedValue;
+                                string zip = txtZip.Text.Trim();
+                                string homePhone = txtHome.Text.Trim();
+                                string workPhone = txtWorkP.Text.Trim();
+                                string cellPhone = txtCell.Text.Trim();
+                                string workEmail = txtWorkE.Text.Trim();
+                                string personalEmail = txtPersE.Text.Trim();
+
+                                try
+                                {
+                                    DataTier pdt = new DataTier();
+                                    pdt.AddPatient(patientID, fname, midInit, lname, dob, gender,
+                                                   acctBal, addressOne, city, state, zip,
+                                                   homePhone, workPhone, cellPhone,
+                                                   workEmail, personalEmail);
+                                    Response.Write("<script>alert('New Patient Added Successfully');</script>");
+                                    btnClear_Click(sender, e);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Response.Write("<script>alert('Error: Either a patient with that id exist or SQL failure!');</script>");
+                                    txtPatient.Focus();
+                                }
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                Response.Write("<script>alert('Error: Either a patient with that id exist or SQL failure!');</script>");
-                                txtPatient.Focus();
+                                Response.Write("<script>alert('Error: Select A Gender!');</script>");
+                                cboGender.Focus();
                             }
                         }
                         else
                         {
-                            Response.Write("<script>alert('Error: Select A Gender!');</script>");
-                            cboGender.Focus();
+                            Response.Write("<script>alert('Error: Invalid Account Balance!');</script>");
+                            txtAcct.Focus();
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
                         Response.Write("<script>alert('Error: Invalid Account Balance!');</script>");
                         txtAcct.Focus();
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Response.Write("<script>alert('Error: Invalid Account Balance!');</script>");
-                    txtAcct.Focus();
+                    Response.Write("<script>alert('Error: Invalid Date of Birth!');</script>");
+                    txtDOB.Focus();
                 }
             }
             catch (Exception ex)
