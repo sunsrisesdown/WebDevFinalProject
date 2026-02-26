@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -131,6 +132,10 @@ namespace WebDevFinalProject
 
         protected void grdRefills_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            Label hid = (Label)e.Row.FindControl("hidRefillID");
+            HyperLink lnk = (HyperLink)e.Row.FindControl("lnkView");
+            LinkButton edit = (LinkButton)e.Row.FindControl("lbtnEdit");
+
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 ((CheckBox)e.Row.FindControl("cbSelectAll")).Attributes.Add("onclick", "javascript:Select('" + ((CheckBox)e.Row.FindControl("cbSelectAll")).ClientID + "')");
@@ -138,16 +143,18 @@ namespace WebDevFinalProject
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Label hid = (Label)e.Row.FindControl("hidRefillID");
-                HyperLink lnk = (HyperLink)e.Row.FindControl("lnkView");
-
                 if (hid != null && lnk != null)
                 {
                     string encrypted = EncryptID(hid.Text.Trim());
                     lnk.NavigateUrl = "~/DisplayRefill.aspx?ID=" + encrypted + "&type=view&page=" + grdRefills.PageIndex;
                 }
             }
-
+            
+            if (edit != null && hid != null)
+            {
+                string encryptedEdit = EncryptID(hid.Text.Trim());
+                edit.CommandArgument = encryptedEdit;
+            }
         }
 
         protected void Delete_Click(object sender, CommandEventArgs e)
@@ -196,8 +203,10 @@ namespace WebDevFinalProject
 
         protected void lbtnEdit_Click(object sender, CommandEventArgs e)
         {
-            Response.Redirect("ModifyRefill.aspx");
+            string encryptedID = e.CommandArgument.ToString();
+            Response.Redirect("ModifyRefill.aspx?ID=" + encryptedID + "&type=edit");
         }
+
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -243,12 +252,12 @@ namespace WebDevFinalProject
                 txtrefill_ID.Text = myID.ToString().Trim();
                 txtRX_Number.Text = myRX;
 
-                if ((myID > 0) || (myRX.Length > 0))
+                DataSet aDataSet = new DataSet();
+                
+                if (myRX.Length > 0)
                 {
-                    DataSet aDataSet = new DataSet();
                     aDataSet = aDataTier.searchRefill(myID, myRX);
                     grdRefills.DataSource = aDataSet.Tables[0];
-
                     if (Cache["Refill_Data"] == null)
                     {
                         Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
@@ -257,7 +266,13 @@ namespace WebDevFinalProject
                 }
                 else
                 {
-                    BindData();
+                    aDataSet = aDataTier.searchRefill(myID);
+                    grdRefills.DataSource = aDataSet.Tables[0];
+                    if (Cache["Refill_Data"] == null)
+                    {
+                        Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                        grdRefills.DataBind();
+                    }
                 }
             }
             catch
