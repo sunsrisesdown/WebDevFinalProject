@@ -252,12 +252,12 @@ namespace WebDevFinalProject
                 txtrefill_ID.Text = myID.ToString().Trim();
                 txtRX_Number.Text = myRX;
 
-                if ((myID > 0) || (myRX.Length > 0))
+                DataSet aDataSet = new DataSet();
+                
+                if (myRX.Length > 0)
                 {
-                    DataSet aDataSet = new DataSet();
                     aDataSet = aDataTier.searchRefill(myID, myRX);
                     grdRefills.DataSource = aDataSet.Tables[0];
-
                     if (Cache["Refill_Data"] == null)
                     {
                         Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
@@ -266,7 +266,13 @@ namespace WebDevFinalProject
                 }
                 else
                 {
-                    BindData();
+                    aDataSet = aDataTier.searchRefill(myID);
+                    grdRefills.DataSource = aDataSet.Tables[0];
+                    if (Cache["Refill_Data"] == null)
+                    {
+                        Cache.Add("Refill_Data", new DataView(aDataSet.Tables[0]), null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.TimeSpan.FromMinutes(10), System.Web.Caching.CacheItemPriority.Default, null);
+                        grdRefills.DataBind();
+                    }
                 }
             }
             catch
