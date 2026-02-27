@@ -43,13 +43,17 @@
         <div class="form-group">
             <label class="form-label">Prescription Amount:</label>
             <asp:TextBox ID="txtPrescriptionAmt" runat="server" CssClass="form-control"
-                ToolTip="Enter the amount prescribed (optional)" MaxLength="6" />
+                ToolTip="Enter the amount prescribed" MaxLength="6" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                ControlToValidate="txtPrescriptionAmt" ErrorMessage="* Required" CssClass="error" />
         </div>
 
         <div class="form-group">
             <label class="form-label">Refill Count:</label>
             <asp:TextBox ID="txtRefillCount" runat="server" CssClass="form-control"
-                ToolTip="Enter how many refills are allowed (optional)" MaxLength="9" />
+                ToolTip="Enter how many refills are allowed" MaxLength="9" />
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                ControlToValidate="txtRefillCount" ErrorMessage="* Required" CssClass="error" />
         </div>
 
         <hr />
@@ -61,6 +65,8 @@
             <ajaxToolkit:CalendarExtender ID="CalendarExtenderStart" runat="server"
                 TargetControlID="txtStartDate"
                 Format="MM/dd/yyyy" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                ControlToValidate="txtStartDate" ErrorMessage="* Required" CssClass="error" />
         </div>
 
         <div class="form-group">
@@ -70,6 +76,8 @@
             <ajaxToolkit:CalendarExtender ID="CalendarExtenderEnd" runat="server"
                 TargetControlID="txtEndDate"
                 Format="MM/dd/yyyy" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                ControlToValidate="txtEndDate" ErrorMessage="* Required" CssClass="error" />
         </div>
 
         <hr />

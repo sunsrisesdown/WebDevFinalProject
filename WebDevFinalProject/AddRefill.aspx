@@ -20,7 +20,7 @@
                 ToolTip="Enter the prescription RX number" MaxLength="6" />
             <asp:RequiredFieldValidator ID="RFV1" runat="server"
                 ControlToValidate="TxtBoxNumber"
-                ErrorMessage="You need an RX Number"
+                ErrorMessage="* Required"
                 CssClass="error" />
         </div>
 
@@ -32,7 +32,7 @@
                 ToolTip="Enter the refill ID" MaxLength="9" ></asp:TextBox>
             <asp:RequiredFieldValidator ID="RFV2" runat="server"
                 ControlToValidate="TxtBoxID"
-                ErrorMessage="You need a Refill ID"
+                ErrorMessage="* Required"
                 CssClass="error" />
         </div>
 
@@ -41,10 +41,14 @@
         <div class="form-group">
             <label class="form-label">Refill Date:</label>
             <asp:TextBox ID="TxtRefillDate" runat="server" CssClass="form-control"
-                ToolTip="Select the date this refill was filled (optional)" MaxLength="10" />
+                ToolTip="Select the date this refill was filled" MaxLength="10" />
             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
                 TargetControlID="TxtRefillDate"
                 Format="MM/dd/yyyy" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                ControlToValidate="TxtRefillDate"
+                ErrorMessage="* Required"
+                CssClass="error" />
         </div>
 
         <hr />

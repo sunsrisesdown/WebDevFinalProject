@@ -62,25 +62,33 @@ namespace WebDevFinalProject
                                 {
 
                                     DateTime endDate = DateTime.Parse(txtEndDate.Text);
-
-
-                                    try
+                                    if (startDate != endDate && startDate < endDate)
                                     {
-                                        DataTier dt = new DataTier();
-                                        string id = txtRxNumber.Text;
-                                        string patient = txtPatientId.Text;
-                                        string physician = txtPhysicianId.Text;
-                                        string medication = txtMedication.Text;
-                                        string dosage = txtDosage.Text;
-                                        string info = txtPrescritpionInfo.Text;
-                                        dt.UpdatePrescription(id, physician, patient, amount, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"), refillCount, medication,dosage,info);
-                                        btnClear_Click(sender, e);
-                                        Response.Write("<script>alert('Prescription updated successfully');</script>");
+
+
+                                        try
+                                        {
+                                            DataTier dt = new DataTier();
+                                            string id = txtRxNumber.Text;
+                                            string patient = txtPatientId.Text;
+                                            string physician = txtPhysicianId.Text;
+                                            string medication = txtMedication.Text;
+                                            string dosage = txtDosage.Text;
+                                            string info = txtPrescritpionInfo.Text;
+                                            dt.UpdatePrescription(id, physician, patient, amount, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"), refillCount, medication, dosage, info);
+                                            btnClear_Click(sender, e);
+                                            Response.Write("<script>alert('Prescription updated successfully');</script>");
+                                        }
+                                        catch
+                                        {
+                                            Response.Write("<script>alert('Error: Either prescription already exists, invalid patient or physician ids or SQL failure!');</script>");
+                                            txtRxNumber.Focus();
+                                        }
                                     }
-                                    catch
+                                    else
                                     {
-                                        Response.Write("<script>alert('Error: Either prescription already exists, invalid patient or physician ids or SQL failure!');</script>");
-                                        txtRxNumber.Focus();
+                                        Response.Write("<script>alert('Error: Invalid Date Combination!');</script>");
+                                        txtEndDate.Focus();
                                     }
                                 }
                                 catch

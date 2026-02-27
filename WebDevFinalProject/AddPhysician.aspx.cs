@@ -130,7 +130,7 @@ namespace WebDevFinalProject
                     txtDOB.Focus();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 Response.Write("<script>alert('Error: Invalid Date of Birth!');</script>");
                 txtDOB.Focus();
