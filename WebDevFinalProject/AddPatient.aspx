@@ -64,6 +64,8 @@
                 <asp:ListItem>Female</asp:ListItem>
                 <asp:ListItem>Other</asp:ListItem>
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                ControlToValidate="cboGender" ErrorMessage="* Required" CssClass="error" />
         </div>
 
         <div class="form-group">

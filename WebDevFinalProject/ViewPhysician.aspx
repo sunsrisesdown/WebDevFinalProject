@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-auto">
-                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx?ID=0" CssClass="btn btn-outline-primary">New Physician</asp:HyperLink>
+                <asp:HyperLink ID="hplNew" runat="server" NavigateUrl="~/AddPhysician.aspx" CssClass="btn btn-outline-primary">New Physician</asp:HyperLink>
             </div>
             <div class="col">
                 <asp:Label ID="Label1" runat="server" Text="Search criteria" CssClass="h5"></asp:Label>

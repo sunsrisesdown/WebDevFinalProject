@@ -22,13 +22,13 @@ namespace WebDevFinalProject
             try
             {
                 DateTime dob1 = DateTime.Parse(txtDOB.Text);
-                if (dob1 < DateTime.Today)
+                if (dob1 <= DateTime.Today)
                 {
                     string dob = DateTime.Parse(txtDOB.Text).ToString();
                     try
                     {
                         decimal acctBal = decimal.Parse(txtAcct.Text.Trim());
-                        if (acctBal > 0)
+                        if (acctBal >= 0)
                         {
                             string gender = cboGender.SelectedValue;
                             if (cboGender.SelectedIndex != 0)
